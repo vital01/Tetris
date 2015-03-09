@@ -155,7 +155,7 @@
             this.infoLabel.Text = "Info";
             this.infoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.infoLabel.Visible = false;
-            this.infoLabel.Paint += new System.Windows.Forms.PaintEventHandler(this.label1_Paint);
+            this.infoLabel.Paint += new System.Windows.Forms.PaintEventHandler(this.infoLabel_Paint);
             // 
             // fieldPicture
             // 

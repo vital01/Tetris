@@ -10,13 +10,16 @@ using System.IO;
 
 namespace Tetris
 {
+    //Направление движения фигуры (для передачи в метод)
     public enum Direction { Up, Down, Left, Right }
 
     public partial class MainForm : Form
     {
         public static MainForm Instance { get; set; }
         public Game Game { get; private set; }
+        //Чек ту локал
         private PrivateFontCollection FontCollection { get; set; }
+        //для проверок нажатия/отжатия кнопок
         private Dictionary<Keys, bool> KeysHolding { get; set; }
         private Dictionary<Keys, AutoResetEvent> KeysCancel { get; set; }
 
@@ -143,6 +146,7 @@ namespace Tetris
             SoundPlayer.PlayMenu();
         }   
 
+        //TODO add prokrutka
         private void Switch(TableLayoutPanel listPanel, PictureBox selectorPicture, bool vertical = true, bool forward = true)
         {
             if (forward && vertical && listPanel.GetRow(selectorPicture) < listPanel.RowCount - 1)
@@ -176,17 +180,23 @@ namespace Tetris
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
+            //проверка на неиспользуемые кнопки
             if (KeysHolding.ContainsKey(e.KeyCode))
             {
+                //если не нажата
                 if (!KeysHolding[e.KeyCode])
                 {
                     KeysHolding[e.KeyCode] = true;
+                    //проверяем текущую панель
                     if (this.Controls.GetChildIndex(menuPanel) == 0)
                     {
+                        //если не работает анимация
                         if (!Animator.Active())
                         {
+                            //если Ентер
                             if (e.KeyCode == Keys.Enter)
                             {
+                                //если на синглплеере
                                 if (menuListPanel.GetRow(menuSelectorPicture) == 0)
                                 {                                   
                                     Animator.FlickerLabel(_1PlayerLabel, 100, 10,
@@ -200,6 +210,7 @@ namespace Tetris
                                 }
                                 else
                                 {
+                                    //если мультиплеер
                                     if (menuListPanel.GetRow(menuSelectorPicture) == 1)
                                     {
                                         Animator.FlickerLabel(_2PlayersLabel, 100, 10,
@@ -210,6 +221,7 @@ namespace Tetris
                                     }
                                     else
                                     {
+                                        //если ехит
                                         if (menuListPanel.GetRow(menuSelectorPicture) == 3)
                                         {                                            
                                             Animator.FlickerLabel(exitLabel, 100, 10, delegate() { Application.Exit(); });
@@ -220,12 +232,14 @@ namespace Tetris
                             }
                             else
                             {
+                                //если вниз
                                 if (e.KeyCode == Keys.Down)
                                 {
                                     Switch(menuListPanel, menuSelectorPicture);
                                 }
                                 else
                                 {
+                                    //если вверх
                                     if (e.KeyCode == Keys.Up)
                                     {
                                         Switch(menuListPanel, menuSelectorPicture, forward: false);
@@ -235,8 +249,10 @@ namespace Tetris
                         }
                     }
                     else
+                        //если игра
                         if (this.Controls.GetChildIndex(gamePanel) == 0)
                         {
+                            //на геймовере
                             if (e.KeyCode == Keys.Enter)
                             {
                                 if (!SoundPlayer.SoundFinished(SoundPlayer.Sounds.GameOver) && !Game.Running)
@@ -248,6 +264,7 @@ namespace Tetris
                             }
                             else
                             {
+                                //пауза
                                 if (e.KeyCode == Keys.Escape)
                                 {
                                     Game.Figure.Pause();
@@ -274,6 +291,7 @@ namespace Tetris
                                             {
                                                 if (KeysCancel.ContainsKey(e.KeyCode))
                                                 {
+                                                    //поток для двигания вправо/влево с одинковой задержкой
                                                     Task.Factory.StartNew
                                                     (delegate()
                                                     {
@@ -302,8 +320,10 @@ namespace Tetris
                         }                       
                         else
                         {
+                            //меню в мультиплеере
                             if (this.Controls.GetChildIndex(networkPanel) == 0)
                             {
+                                //что ниего не мигало
                                 if (!Animator.Active(openGameLabel, joinGameLabel, backLabel, errorLabel))
                                 {
                                     if (e.KeyCode == Keys.Enter)
@@ -314,6 +334,7 @@ namespace Tetris
                                         }
                                         else
                                         {
+                                            //нажатие на подключиться
                                             if (networkListPanel.GetRow(networkSelectorPicture) == 1)
                                             {
                                                 string ipString = "";
@@ -325,6 +346,7 @@ namespace Tetris
                                             }
                                             else
                                             {
+                                                //бэк
                                                 if (networkListPanel.GetRow(networkSelectorPicture) == 2)
                                                 {
                                                     Animator.FlickerLabel(backLabel, 100, 10,
@@ -356,6 +378,7 @@ namespace Tetris
                                     }
                                     else
                                     {
+                                        //вверх/вниз в мультике меню
                                         if (e.KeyCode == Keys.Down)
                                         {
                                             Switch(networkListPanel, networkSelectorPicture);
@@ -456,7 +479,7 @@ namespace Tetris
             e.Graphics.DrawRectangle(new Pen(Color.White, 2), 1, 1, e.ClipRectangle.Width - 2, e.ClipRectangle.Height - 2);
         }
 
-        private void label1_Paint(object sender, PaintEventArgs e)
+        private void infoLabel_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.DrawRectangle(new Pen(Color.White, 2), 1, 1, e.ClipRectangle.Width - 2, e.ClipRectangle.Height - 2);
         }  

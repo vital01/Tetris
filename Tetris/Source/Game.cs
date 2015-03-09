@@ -78,7 +78,7 @@ namespace Tetris
                                 MainForm.BeginInvokeControl(MainForm.Instance.linesNumberLabel, new Action(() => { MainForm.Instance.linesNumberLabel.Text = Lines.ToString(); }));
                                 
                             }
-                        Score += result * 100 + 10;
+                        Score += result * (100 + 10 * (Level - 1)) + 10;
                         MainForm.BeginInvokeControl(MainForm.Instance.scoreNumberLabel, new Action(() => { MainForm.Instance.scoreNumberLabel.Text = Score.ToString(); }));
                     }
                 });

@@ -12,6 +12,7 @@ namespace Tetris
         private enum Music { Menu, Background_0, Background_1, Background_2 }
         private static Audio Menu { get; set; }
         private static List<Audio> PlayList { get; set; }
+        //звук,соответствующий энаму
         private static Dictionary<Sounds, Audio> SoundsDictionary { get; set; }
         private static int CurrentTrack { get; set; }
 
@@ -36,6 +37,7 @@ namespace Tetris
                                 PlayList = new List<Audio>();
                             }
                             PlayList.Add(new Audio(path));
+                            //вешаем событие на переключение по плейлисту
                             PlayList[PlayList.Count - 1].Ending += new EventHandler((sender, e) => { CurrentTrack = (CurrentTrack + 1) % PlayList.Count; PlayList[CurrentTrack].CurrentPosition = 0; PlayList[CurrentTrack].Play(); });
                         }
                     }
@@ -119,21 +121,7 @@ namespace Tetris
 
         public static bool SoundFinished(Sounds sound)
         {
-            if (SoundsDictionary.ContainsKey(sound))
-            {
-                if (SoundsDictionary[sound].CurrentPosition == SoundsDictionary[sound].Duration)
-                {
-                    return false;
-                }
-                else
-                {
-                    return true;
-                }
-            }
-            else
-            {
-                return false;
-            }
+            return SoundsDictionary.ContainsKey(sound) && !(SoundsDictionary[sound].CurrentPosition == SoundsDictionary[sound].Duration);
         }               
     }
 }

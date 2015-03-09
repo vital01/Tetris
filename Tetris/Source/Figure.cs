@@ -13,21 +13,29 @@ namespace Tetris
         public static int BrickSize { get; set; }
         public static Color[] Colors { get; private set; }
         public static Point[][][] Schemas { get; private set; }
+        //скорость при нажатии вниз
         private static int AccelerationTimeout { get; set; }                                  
         private static object LockObject { get; set; }
+        //для активации падения фигуры
         private bool Activated { get; set; }
+        //ускорена?
         private bool Accelerated { get; set; }
         private bool Paused { get; set; }
-        private int Id { get; set; }     
-        private int NormalTimeout { get; set; }        
+        private int Id { get; set; } 
+        //скорость падения, которую передаем при создании
+        private int NormalTimeout { get; set; } 
+        //текущая скорость
         private int Timeout { get; set; }
+        //сколько осталось висеть после паузы
         private int LeftTimeout { get; set; }
         private Point Position { get; set; }
+        //на пред шаге, чтобы вытереть
         private Point OldPosition { get; set; }
         private Point ProjectionPosition { get; set; }
         private Point OldProjectionPosition { get; set; }
         private int SchemaId { get; set; }
         private int OldSchemaId { get; set; }
+        //отмена задержки
         private AutoResetEvent CancelTimeoutEvent { get; set; }
         private ManualResetEvent PauseEvent { get; set; }
         private Stopwatch Timer { get; set; }
@@ -288,18 +296,16 @@ namespace Tetris
                     Paused = true;
                     PauseEvent.Reset();
                     CancelTimeoutEvent.Set();
+                    MainForm.Instance.infoLabel.Visible = true;
+                    MainForm.CenterInfoLabel("Pause");
                     SoundPlayer.PauseBackground();
                     SoundPlayer.PlaySound(SoundPlayer.Sounds.Pause);
                 }
                 else
                 {
                     PauseEvent.Set();
+                    MainForm.Instance.infoLabel.Visible = false;
                     SoundPlayer.ResumeBackground();
-                }
-                MainForm.Instance.infoLabel.Visible = !MainForm.Instance.infoLabel.Visible;
-                if (MainForm.Instance.infoLabel.Visible)
-                {
-                    MainForm.CenterInfoLabel("Pause");
                 }
             }
         }
@@ -363,6 +369,7 @@ namespace Tetris
                     MainForm.Instance.Game.Field.Refresh();                  
                 }
                 Thread.Sleep(150);
+                //опускание поля вниз
                 for (int j = 0; j < MainForm.Instance.Game.Field.ColumnCount; j++)
                 {
                     int offset = 0;
@@ -502,6 +509,7 @@ namespace Tetris
             return false;
         }
 
+        //УДАЛИТЬ ЭТО!!!!
         private bool CheckOutOfBounds()
         {
             for (int i = 0; i < 4; i++)

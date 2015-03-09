@@ -4,7 +4,7 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Drawing;
 using System.Collections.Generic;
-//test
+
 namespace Tetris
 {
     public static class Animator
@@ -63,14 +63,7 @@ namespace Tetris
 
         public static bool Active()
         {
-            if (ActiveLabels.Count == 0)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            return ActiveLabels.Count != 0;
         }
 
     }
