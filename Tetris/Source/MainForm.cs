@@ -7,6 +7,7 @@ using System.Threading;
 using System.Collections.Generic;
 using System.Drawing.Text;
 using System.IO;
+using System.Runtime.InteropServices;
 
 namespace Tetris
 {
@@ -62,6 +63,9 @@ namespace Tetris
             }
         }
 
+        [System.Runtime.InteropServices.DllImport("gdi32.dll")]
+        private static extern IntPtr AddFontMemResourceEx(IntPtr pbFont, uint cbFont, IntPtr pdv, [System.Runtime.InteropServices.In] ref uint pcFonts);
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             Instance = this;
@@ -85,16 +89,14 @@ namespace Tetris
             FontCollection = new PrivateFontCollection();
             using (Stream stream = this.GetType().Assembly.GetManifestResourceStream("Tetris.Resources.Font.HalfBoldPixel7.ttf"))
             {
-                byte[] data = new byte[stream.Length];
-                stream.Read(data, 0, (int)stream.Length);
-                stream.Close();
-                unsafe
-                {
-                    fixed (byte* pData = data)
-                    {
-                        FontCollection.AddMemoryFont((System.IntPtr)pData, data.Length);
-                    }
-                }
+                byte[] fontData = new byte[stream.Length];
+                stream.Read(fontData, 0, (int)stream.Length);
+                IntPtr fontPtr = Marshal.AllocCoTaskMem(fontData.Length);
+                Marshal.Copy(fontData, 0, fontPtr, fontData.Length);
+                FontCollection.AddMemoryFont(fontPtr, fontData.Length);
+                uint dummy = 0;
+                AddFontMemResourceEx(fontPtr, (uint)fontData.Length, IntPtr.Zero, ref dummy);
+                Marshal.FreeCoTaskMem(fontPtr);
             }
             levelLabel.Font = new Font(FontCollection.Families[0], 24, FontStyle.Underline);
             levelNumberLabel.Font = new Font(FontCollection.Families[0], 20);
