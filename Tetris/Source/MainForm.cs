@@ -18,8 +18,6 @@ namespace Tetris
     {
         public static MainForm Instance { get; set; }
         public Game Game { get; private set; }
-        //Чек ту локал
-        private PrivateFontCollection FontCollection { get; set; }
         private static IntPtr FontHandle { get; set; }
         //для проверок нажатия/отжатия кнопок
         private Dictionary<Keys, bool> KeysHolding { get; set; }
@@ -91,7 +89,7 @@ namespace Tetris
             KeysCancel.Add(Keys.Right, new AutoResetEvent(false));
             #endregion
             #region Изменение шрифтов
-            FontCollection = new PrivateFontCollection();
+            PrivateFontCollection FontCollection = new PrivateFontCollection();
             using (Stream stream = this.GetType().Assembly.GetManifestResourceStream("Tetris.Resources.Font.HalfBoldPixel7.ttf"))
             {
                 byte[] fontData = new byte[stream.Length];
