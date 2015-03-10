@@ -18,7 +18,6 @@ namespace Tetris
     {
         public static MainForm Instance { get; set; }
         public Game Game { get; private set; }
-        private static IntPtr FontHandle { get; set; }
         //для проверок нажатия/отжатия кнопок
         private Dictionary<Keys, bool> KeysHolding { get; set; }
         private Dictionary<Keys, AutoResetEvent> KeysCancel { get; set; }
@@ -69,8 +68,7 @@ namespace Tetris
         private static extern bool RemoveFontMemResourceEx(IntPtr fh);
 
         private void MainForm_Load(object sender, EventArgs e)
-        {
-            AppDomain.CurrentDomain.ProcessExit += new EventHandler((_sender, _e) => { RemoveFontMemResourceEx(FontHandle); });
+        {           
             Instance = this;
             SetDoubleBuffered(this);
             #region Инициализация состояний зажатых клавиш
@@ -98,8 +96,9 @@ namespace Tetris
                 Marshal.Copy(fontData, 0, fontPtr, fontData.Length);
                 FontCollection.AddMemoryFont(fontPtr, fontData.Length);
                 uint dummy = 0;
-                AddFontMemResourceEx(fontPtr, (uint)fontData.Length, IntPtr.Zero, ref dummy);
+                IntPtr fontHandle = AddFontMemResourceEx(fontPtr, (uint)fontData.Length, IntPtr.Zero, ref dummy);
                 Marshal.FreeCoTaskMem(fontPtr);
+                AppDomain.CurrentDomain.ProcessExit += new EventHandler((_sender, _e) => { RemoveFontMemResourceEx(fontHandle); });
             }
             levelLabel.Font = new Font(FontCollection.Families[0], 24, FontStyle.Underline);
             levelNumberLabel.Font = new Font(FontCollection.Families[0], 20);
