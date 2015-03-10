@@ -20,6 +20,7 @@ namespace Tetris
         public Game Game { get; private set; }
         //Чек ту локал
         private PrivateFontCollection FontCollection { get; set; }
+        private static IntPtr FontHandle { get; set; }
         //для проверок нажатия/отжатия кнопок
         private Dictionary<Keys, bool> KeysHolding { get; set; }
         private Dictionary<Keys, AutoResetEvent> KeysCancel { get; set; }
@@ -66,8 +67,12 @@ namespace Tetris
         [System.Runtime.InteropServices.DllImport("gdi32.dll")]
         private static extern IntPtr AddFontMemResourceEx(IntPtr pbFont, uint cbFont, IntPtr pdv, [System.Runtime.InteropServices.In] ref uint pcFonts);
 
+        [System.Runtime.InteropServices.DllImport("gdi32.dll")]
+        private static extern bool RemoveFontMemResourceEx(IntPtr fh);
+
         private void MainForm_Load(object sender, EventArgs e)
         {
+            AppDomain.CurrentDomain.ProcessExit += new EventHandler((_sender, _e) => { RemoveFontMemResourceEx(FontHandle); });
             Instance = this;
             SetDoubleBuffered(this);
             #region Инициализация состояний зажатых клавиш
