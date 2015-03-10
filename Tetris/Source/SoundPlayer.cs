@@ -38,7 +38,7 @@ namespace Tetris
                             }
                             PlayList.Add(new Audio(path));
                             //вешаем событие на переключение по плейлисту
-                            PlayList[PlayList.Count - 1].Ending += new EventHandler((sender, e) => { CurrentTrack = (CurrentTrack + 1) % PlayList.Count; PlayList[CurrentTrack].CurrentPosition = 0; PlayList[CurrentTrack].Play(); });
+                            PlayList[PlayList.Count - 1].Ending += new EventHandler((sender, e) => { CurrentTrack = (CurrentTrack + 1) % PlayList.Count; PlayBackground(); });
                         }
                     }
                 }
@@ -90,6 +90,7 @@ namespace Tetris
         {
             if (PlayList != null)
             {
+                PlayList[CurrentTrack].CurrentPosition = 0;
                 PlayList[CurrentTrack].Play();
             }
         }
