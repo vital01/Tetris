@@ -11,14 +11,15 @@ using System.Runtime.InteropServices;
 
 namespace Tetris
 {
-    //Направление движения фигуры (для передачи в метод)
+    /// <summary>
+    /// Направления движения фигуры (для передачи в метод)
+    /// </summary>
     public enum Direction { Up, Down, Left, Right }
 
     public partial class MainForm : Form
     {
         public static MainForm Instance { get; set; }
         public Game Game { get; private set; }
-        //для проверок нажатия/отжатия кнопок
         private Dictionary<Keys, bool> KeysHolding { get; set; }
         private Dictionary<Keys, AutoResetEvent> KeysCancel { get; set; }
 
@@ -134,7 +135,7 @@ namespace Tetris
             SoundPlayer.PlayMenu();
         }
 
-        //TODO add prokrutka
+        
         private void Switch(TableLayoutPanel listPanel, PictureBox selectorPicture, bool vertical = true, bool forward = true)
         {
             if (forward && vertical)
@@ -474,12 +475,12 @@ namespace Tetris
 
         private void inputPanel_Paint(object sender, PaintEventArgs e)
         {
-            e.Graphics.DrawRectangle(new Pen(Color.White, 2), 1, 1, e.ClipRectangle.Width - 2, e.ClipRectangle.Height - 2);
+            Drawing.PaintBorder(e.Graphics, Color.White, e.ClipRectangle);
         }
 
         private void infoLabel_Paint(object sender, PaintEventArgs e)
         {
-            e.Graphics.DrawRectangle(new Pen(Color.White, 2), 1, 1, e.ClipRectangle.Width - 2, e.ClipRectangle.Height - 2);
+            Drawing.PaintBorder(e.Graphics, Color.White, e.ClipRectangle);
         }
     }
 }
