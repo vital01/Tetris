@@ -26,7 +26,7 @@ namespace Tetris
 
         public MainForm()
         {
-            InitializeComponent();            
+            InitializeComponent();
         }
 
         public static void BeginInvokeControl(Control control, Action action)
@@ -51,7 +51,7 @@ namespace Tetris
         public static void CenterInfoLabel(string text)
         {
             BeginInvokeControl(MainForm.Instance.infoLabel, new Action(() => { MainForm.Instance.infoLabel.Text = text; }));
-            BeginInvokeControl(MainForm.Instance.infoLabel, new Action(() => { MainForm.Instance.infoLabel.Location = new Point((MainForm.Instance.fieldPicture.Width - MainForm.Instance.infoLabel.Width) / 2, (MainForm.Instance.fieldPicture.Height - MainForm.Instance.infoLabel.Height) / 2); }));            
+            BeginInvokeControl(MainForm.Instance.infoLabel, new Action(() => { MainForm.Instance.infoLabel.Location = new Point((MainForm.Instance.fieldPicture.Width - MainForm.Instance.infoLabel.Width) / 2, (MainForm.Instance.fieldPicture.Height - MainForm.Instance.infoLabel.Height) / 2); }));
         }
 
         private static void SetDoubleBuffered(Control parent)
@@ -69,7 +69,7 @@ namespace Tetris
         private void MainForm_Load(object sender, EventArgs e)
         {
             Instance = this;
-            SetDoubleBuffered(this);            
+            SetDoubleBuffered(this);
             #region Инициализация состояний зажатых клавиш
             KeysHolding = new Dictionary<Keys, bool>();
             KeysHolding.Add(Keys.Left, false);
@@ -146,38 +146,48 @@ namespace Tetris
             SoundPlayer.LoadMusic();
             SoundPlayer.LoadSounds();
             SoundPlayer.PlayMenu();
-        }   
+        }
 
         //TODO add prokrutka
         private void Switch(TableLayoutPanel listPanel, PictureBox selectorPicture, bool vertical = true, bool forward = true)
         {
-            if (forward && vertical && listPanel.GetRow(selectorPicture) < listPanel.RowCount - 1)
+            if (forward && vertical)
             {
-                listPanel.SetRow(selectorPicture, listPanel.GetRow(selectorPicture) + 1);
-                SoundPlayer.PlaySound(SoundPlayer.Sounds.Switch);
+                if (listPanel.GetRow(selectorPicture) < listPanel.RowCount - 1)
+                    listPanel.SetRow(selectorPicture, listPanel.GetRow(selectorPicture) + 1);
+                else
+                    listPanel.SetRow(selectorPicture, 0);
+
             }
             else
-                if (!forward && vertical && listPanel.GetRow(selectorPicture) > 0)
+                if (!forward && vertical)
                 {
-                    listPanel.SetRow(selectorPicture, listPanel.GetRow(selectorPicture) - 1);
-                    SoundPlayer.PlaySound(SoundPlayer.Sounds.Switch);
+                    if (listPanel.GetRow(selectorPicture) > 0)
+                        listPanel.SetRow(selectorPicture, listPanel.GetRow(selectorPicture) - 1);
+                    else
+                        listPanel.SetRow(selectorPicture, listPanel.RowCount - 1);
                 }
                 else
                 {
-                    if (forward && !vertical && listPanel.GetColumn(selectorPicture) < listPanel.ColumnCount - 1)
+                    if (forward && !vertical)
                     {
-                        listPanel.SetColumn(selectorPicture, listPanel.GetColumn(selectorPicture) + 1);
-                        SoundPlayer.PlaySound(SoundPlayer.Sounds.Switch);
+                        if (listPanel.GetColumn(selectorPicture) < listPanel.ColumnCount - 1)
+                            listPanel.SetColumn(selectorPicture, listPanel.GetColumn(selectorPicture) + 1);
+                        else
+                            listPanel.SetColumn(selectorPicture, 0);
                     }
                     else
                     {
-                        if (!forward && !vertical && listPanel.GetColumn(selectorPicture) > 0)
+                        if (!forward && !vertical)
                         {
-                            listPanel.SetColumn(selectorPicture, listPanel.GetColumn(selectorPicture) - 1);
-                            SoundPlayer.PlaySound(SoundPlayer.Sounds.Switch);
+                            if (listPanel.GetColumn(selectorPicture) > 0)
+                                listPanel.SetColumn(selectorPicture, listPanel.GetColumn(selectorPicture) - 1);
+                            else
+                                listPanel.SetColumn(selectorPicture, listPanel.ColumnCount - 1);
                         }
                     }
                 }
+            SoundPlayer.PlaySound(SoundPlayer.Sounds.Switch);
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -200,15 +210,15 @@ namespace Tetris
                             {
                                 //если на синглплеере
                                 if (menuListPanel.GetRow(menuSelectorPicture) == 0)
-                                {                                   
+                                {
                                     Animator.FlickerLabel(_1PlayerLabel, 100, 10,
                                         delegate()
                                         {
                                             SoundPlayer.StopMenu();
                                             Game = new Game();
                                             Game.Start();
-                                            BeginInvokeControl(gamePanel, new Action(() => { gamePanel.BringToFront(); }));                                            
-                                        });                                   
+                                            BeginInvokeControl(gamePanel, new Action(() => { gamePanel.BringToFront(); }));
+                                        });
                                 }
                                 else
                                 {
@@ -225,7 +235,7 @@ namespace Tetris
                                     {
                                         //если ехит
                                         if (menuListPanel.GetRow(menuSelectorPicture) == 3)
-                                        {                                            
+                                        {
                                             Animator.FlickerLabel(exitLabel, 100, 10, delegate() { Application.Exit(); });
                                         }
                                     }
@@ -247,7 +257,7 @@ namespace Tetris
                                         Switch(menuListPanel, menuSelectorPicture, forward: false);
                                     }
                                 }
-                            }                           
+                            }
                         }
                     }
                     else
@@ -319,7 +329,7 @@ namespace Tetris
                                     }
                                 }
                             }
-                        }                       
+                        }
                         else
                         {
                             //меню в мультиплеере
@@ -376,7 +386,7 @@ namespace Tetris
                                                     SoundPlayer.PlaySound(SoundPlayer.Sounds.Select_0);
                                                 }
                                             }
-                                        }                                     
+                                        }
                                     }
                                     else
                                     {
@@ -449,7 +459,7 @@ namespace Tetris
                                     }
                                 }
                             }
-                        }                                       
+                        }
                 }
             }
         }
@@ -484,6 +494,6 @@ namespace Tetris
         private void infoLabel_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.DrawRectangle(new Pen(Color.White, 2), 1, 1, e.ClipRectangle.Width - 2, e.ClipRectangle.Height - 2);
-        }  
+        }
     }
 }
