@@ -8,37 +8,38 @@ namespace Tetris
 {
     public static class SoundPlayer
     {
-        private const string MenuPath = "Music\\Menu.ogg";
-
-        public enum Sounds { Hit, Line, Pause, Switch, Select_0, Select_1, Error, GameOver }        
+        public enum Sounds { Hit, Line, Pause, Switch, Select_0, Select_1, Error, GameOver }
+        private enum Music { Menu, Background_0, Background_1, Background_2 }
         private static Audio Menu { get; set; }
-        private static List<Audio> GamePlaylist { get; set; }
+        private static List<Audio> PlayList { get; set; }
         //звук,соответствующий энаму
         private static Dictionary<Sounds, Audio> SoundsDictionary { get; set; }
         private static int CurrentTrack { get; set; }
 
         public static void LoadMusic()
         {
-            foreach (string music in Directory.GetFiles(@"Music", "*.ogg"))          
-            {                
-                if (File.Exists(music))
+            for (Music music = 0; (int)music < 4; music++)
+            {
+                string path = @"Music\" + music.ToString() + ".ogg";
+                if (File.Exists(path))
                 {
-                    if (music.Equals(MenuPath))
+                    if (music == Music.Menu)
                     {
-                        Menu = new Audio(music);
+                        Menu = new Audio(path);
                         Menu.Ending += new EventHandler((sender, e) => { Menu.CurrentPosition = 0; });
                     }
                     else
                     {
-                        
-                            if (GamePlaylist == null)
+                        if (music == Music.Background_0 || music == Music.Background_1 || music == Music.Background_2)
+                        {
+                            if (PlayList == null)
                             {
-                                GamePlaylist = new List<Audio>();
+                                PlayList = new List<Audio>();
                             }
-                            GamePlaylist.Add(new Audio(music));
-                            //Событие на переключение на следующий трек плейлиста по завершении предыдущего
-                            GamePlaylist[GamePlaylist.Count - 1].Ending += new EventHandler((sender, e) => { CurrentTrack = (CurrentTrack + 1) % GamePlaylist.Count; GamePlaylist[CurrentTrack].CurrentPosition = 0; GamePlaylist[CurrentTrack].Play(); });
-                        
+                            PlayList.Add(new Audio(path));
+                            //вешаем событие на переключение по плейлисту
+                            PlayList[PlayList.Count - 1].Ending += new EventHandler((sender, e) => { CurrentTrack = (CurrentTrack + 1) % PlayList.Count; PlayList[CurrentTrack].CurrentPosition = 0; PlayList[CurrentTrack].Play(); });
+                        }
                     }
                 }
             }
@@ -87,34 +88,34 @@ namespace Tetris
 
         public static void PlayBackground()
         {
-            if (GamePlaylist != null)
+            if (PlayList != null)
             {
-                GamePlaylist[CurrentTrack].Play();
+                PlayList[CurrentTrack].Play();
             }
         }
 
         public static void StopBackground()
         {
-            if (GamePlaylist != null)
+            if (PlayList != null)
             {
-                GamePlaylist[CurrentTrack].Stop();
+                PlayList[CurrentTrack].Stop();
                 CurrentTrack = 0;
             }
         }
 
         public static void PauseBackground()
         {
-            if (GamePlaylist != null)
+            if (PlayList != null)
             {
-                GamePlaylist[CurrentTrack].Pause();
+                PlayList[CurrentTrack].Pause();
             }
         }
 
         public static void ResumeBackground()
         {
-            if (GamePlaylist != null)
+            if (PlayList != null)
             {
-                GamePlaylist[CurrentTrack].Play();
+                PlayList[CurrentTrack].Play();
             }
         } 
 
