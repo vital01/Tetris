@@ -61,14 +61,10 @@ namespace Tetris
             }
         }
 
-        [System.Runtime.InteropServices.DllImport("gdi32.dll")]
-        private static extern IntPtr AddFontMemResourceEx(IntPtr pbFont, uint cbFont, IntPtr pdv, [System.Runtime.InteropServices.In] ref uint pcFonts);
 
-        [System.Runtime.InteropServices.DllImport("gdi32.dll")]
-        private static extern bool RemoveFontMemResourceEx(IntPtr fh);
 
         private void MainForm_Load(object sender, EventArgs e)
-        {           
+        {
             Instance = this;
             SetDoubleBuffered(this);
             #region Инициализация состояний зажатых клавиш
@@ -87,19 +83,7 @@ namespace Tetris
             KeysCancel.Add(Keys.Right, new AutoResetEvent(false));
             #endregion
             #region Изменение шрифтов
-            PrivateFontCollection FontCollection = new PrivateFontCollection();
-            using (Stream stream = this.GetType().Assembly.GetManifestResourceStream("Tetris.Resources.Font.HalfBoldPixel7.ttf"))
-            {
-                byte[] fontData = new byte[stream.Length];
-                stream.Read(fontData, 0, (int)stream.Length);
-                IntPtr fontPtr = Marshal.AllocCoTaskMem(fontData.Length);
-                Marshal.Copy(fontData, 0, fontPtr, fontData.Length);
-                FontCollection.AddMemoryFont(fontPtr, fontData.Length);
-                uint dummy = 0;
-                IntPtr fontHandle = AddFontMemResourceEx(fontPtr, (uint)fontData.Length, IntPtr.Zero, ref dummy);
-                Marshal.FreeCoTaskMem(fontPtr);
-                AppDomain.CurrentDomain.ProcessExit += new EventHandler((_sender, _e) => { RemoveFontMemResourceEx(fontHandle); });
-            }
+            PrivateFontCollection FontCollection = ResourceLoader.LoadFont();
             levelLabel.Font = new Font(FontCollection.Families[0], 24, FontStyle.Underline);
             levelNumberLabel.Font = new Font(FontCollection.Families[0], 20);
             scoreLabel.Font = new Font(FontCollection.Families[0], 24, FontStyle.Underline);

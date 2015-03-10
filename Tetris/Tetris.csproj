@@ -58,6 +58,7 @@
     <Compile Include="Source\Game.cs" />
     <Compile Include="Source\Animator.cs" />
     <Compile Include="Source\Network.cs" />
+    <Compile Include="Source\ResourceLoader.cs" />
     <Compile Include="Source\SoundPlayer.cs" />
     <Compile Include="Source\MainForm.cs">
       <SubType>Form</SubType>
