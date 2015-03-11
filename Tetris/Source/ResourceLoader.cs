@@ -11,6 +11,7 @@ namespace Tetris
 {
     class ResourceLoader
     {
+        private static PrivateFontCollection FontCollection { get; set; }
         private const string FontPath = "Tetris.Resources.Font.HalfBoldPixel7.ttf";
 
         [System.Runtime.InteropServices.DllImport("gdi32.dll")]
@@ -21,7 +22,7 @@ namespace Tetris
 
         public static PrivateFontCollection LoadFont()
         {
-            PrivateFontCollection FontCollection = new PrivateFontCollection();
+            FontCollection = new PrivateFontCollection();
             using (Stream stream = MainForm.Instance.GetType().Assembly.GetManifestResourceStream(FontPath))
             {
                 byte[] fontData = new byte[stream.Length];
