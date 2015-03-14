@@ -256,6 +256,7 @@ namespace Tetris
                             {
                                 if (!SoundPlayer.SoundFinished(SoundPlayer.Sounds.GameOver) && !Game.Running)
                                 {
+                                    SoundPlayer.StopSound(SoundPlayer.Sounds.GameOver);
                                     infoLabel.Visible = false;
                                     menuPanel.BringToFront();
                                     SoundPlayer.PlayMenu();

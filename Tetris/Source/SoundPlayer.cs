@@ -67,6 +67,14 @@ namespace Tetris
             }
         }
 
+        public static void StopSound(Sounds sound)
+        {
+            if (SoundsDictionary != null && SoundsDictionary.ContainsKey(sound))
+            {
+                SoundsDictionary[sound].Stop();
+            }
+        }
+
         public static void PlayMenu()
         {
             if (Menu != null)
