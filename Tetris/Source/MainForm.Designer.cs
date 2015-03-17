@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.mainPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.mainPanel = new System.Windows.Forms.TableLayoutPanel();
             this.fieldPanel = new System.Windows.Forms.Panel();
             this.infoLabel = new System.Windows.Forms.Label();
             this.fieldPicture = new System.Windows.Forms.PictureBox();
@@ -43,8 +43,7 @@
             this.levelLabel = new System.Windows.Forms.Label();
             this.nextPicture = new System.Windows.Forms.PictureBox();
             this.gamePanel = new System.Windows.Forms.Panel();
-            this.menuPanel = new System.Windows.Forms.Panel();
-            this.mainPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.menuPanel = new System.Windows.Forms.TableLayoutPanel();
             this.titlePicture = new System.Windows.Forms.PictureBox();
             this.copyrightLabel = new System.Windows.Forms.Label();
             this.menuListPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -91,14 +90,13 @@
             this.leftLabel = new System.Windows.Forms.Label();
             this.rightLabel = new System.Windows.Forms.Label();
             this.keyboardSelectorPicture = new System.Windows.Forms.PictureBox();
-            this.mainPanel2.SuspendLayout();
+            this.mainPanel.SuspendLayout();
             this.fieldPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fieldPicture)).BeginInit();
             this.infoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nextPicture)).BeginInit();
             this.gamePanel.SuspendLayout();
             this.menuPanel.SuspendLayout();
-            this.mainPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.titlePicture)).BeginInit();
             this.menuListPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menuSelectorPicture)).BeginInit();
@@ -111,20 +109,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.keyboardSelectorPicture)).BeginInit();
             this.SuspendLayout();
             // 
-            // mainPanel2
+            // mainPanel
             // 
-            this.mainPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
-            this.mainPanel2.ColumnCount = 2;
-            this.mainPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 325F));
-            this.mainPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.mainPanel2.Controls.Add(this.fieldPanel, 0, 0);
-            this.mainPanel2.Controls.Add(this.infoPanel, 1, 0);
-            this.mainPanel2.Location = new System.Drawing.Point(12, 12);
-            this.mainPanel2.Name = "mainPanel2";
-            this.mainPanel2.RowCount = 1;
-            this.mainPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.mainPanel2.Size = new System.Drawing.Size(481, 429);
-            this.mainPanel2.TabIndex = 1;
+            this.mainPanel.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
+            this.mainPanel.ColumnCount = 2;
+            this.mainPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 325F));
+            this.mainPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.mainPanel.Controls.Add(this.fieldPanel, 0, 0);
+            this.mainPanel.Controls.Add(this.infoPanel, 1, 0);
+            this.mainPanel.Location = new System.Drawing.Point(12, 12);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.RowCount = 1;
+            this.mainPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.mainPanel.Size = new System.Drawing.Size(481, 429);
+            this.mainPanel.TabIndex = 1;
             // 
             // fieldPanel
             // 
@@ -299,7 +297,7 @@
             // 
             // gamePanel
             // 
-            this.gamePanel.Controls.Add(this.mainPanel2);
+            this.gamePanel.Controls.Add(this.mainPanel);
             this.gamePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gamePanel.Location = new System.Drawing.Point(0, 0);
             this.gamePanel.Name = "gamePanel";
@@ -308,30 +306,21 @@
             // 
             // menuPanel
             // 
-            this.menuPanel.Controls.Add(this.mainPanel1);
+            this.menuPanel.ColumnCount = 1;
+            this.menuPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.menuPanel.Controls.Add(this.titlePicture, 0, 0);
+            this.menuPanel.Controls.Add(this.copyrightLabel, 0, 2);
+            this.menuPanel.Controls.Add(this.menuListPanel, 0, 1);
             this.menuPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.menuPanel.Location = new System.Drawing.Point(0, 0);
             this.menuPanel.Name = "menuPanel";
+            this.menuPanel.RowCount = 3;
+            this.menuPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.menuPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.menuPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.menuPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.menuPanel.Size = new System.Drawing.Size(505, 453);
-            this.menuPanel.TabIndex = 3;
-            // 
-            // mainPanel1
-            // 
-            this.mainPanel1.ColumnCount = 1;
-            this.mainPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.mainPanel1.Controls.Add(this.titlePicture, 0, 0);
-            this.mainPanel1.Controls.Add(this.copyrightLabel, 0, 2);
-            this.mainPanel1.Controls.Add(this.menuListPanel, 0, 1);
-            this.mainPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel1.Location = new System.Drawing.Point(0, 0);
-            this.mainPanel1.Name = "mainPanel1";
-            this.mainPanel1.RowCount = 3;
-            this.mainPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.mainPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.mainPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.mainPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.mainPanel1.Size = new System.Drawing.Size(505, 453);
-            this.mainPanel1.TabIndex = 0;
+            this.menuPanel.TabIndex = 0;
             // 
             // titlePicture
             // 
@@ -1066,7 +1055,7 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyUp);
-            this.mainPanel2.ResumeLayout(false);
+            this.mainPanel.ResumeLayout(false);
             this.fieldPanel.ResumeLayout(false);
             this.fieldPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fieldPicture)).EndInit();
@@ -1075,8 +1064,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nextPicture)).EndInit();
             this.gamePanel.ResumeLayout(false);
             this.menuPanel.ResumeLayout(false);
-            this.mainPanel1.ResumeLayout(false);
-            this.mainPanel1.PerformLayout();
+            this.menuPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.titlePicture)).EndInit();
             this.menuListPanel.ResumeLayout(false);
             this.menuListPanel.PerformLayout();
@@ -1099,7 +1087,7 @@
         #endregion
 
         public System.Windows.Forms.PictureBox fieldPicture;
-        private System.Windows.Forms.TableLayoutPanel mainPanel2;
+        private System.Windows.Forms.TableLayoutPanel mainPanel;
         private System.Windows.Forms.TableLayoutPanel infoPanel;
         private System.Windows.Forms.Label levelLabel;
         private System.Windows.Forms.Label scoreLabel;
@@ -1109,7 +1097,7 @@
         public System.Windows.Forms.Label linesNumberLabel;
         public System.Windows.Forms.PictureBox nextPicture;
         public System.Windows.Forms.Label levelNumberLabel;
-        private System.Windows.Forms.TableLayoutPanel mainPanel1;
+        private System.Windows.Forms.TableLayoutPanel menuPanel;
         private System.Windows.Forms.PictureBox titlePicture;
         private System.Windows.Forms.Label copyrightLabel;
         private System.Windows.Forms.TableLayoutPanel menuListPanel;
@@ -1118,7 +1106,6 @@
         private System.Windows.Forms.Label optionsLabel;
         private System.Windows.Forms.Label _2PlayersLabel;
         private System.Windows.Forms.Label exitLabel;
-        public System.Windows.Forms.Panel menuPanel;
         private System.Windows.Forms.TableLayoutPanel networkPanel;
         private System.Windows.Forms.TableLayoutPanel networkListPanel;
         private System.Windows.Forms.Label backLabel;
