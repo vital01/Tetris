@@ -19,7 +19,7 @@ namespace Tetris
     public partial class MainForm : Form
     {
         public static MainForm Instance { get; set; }
-        public Game Game { get; private set; }
+        private Game Game { get; set; }
         private Dictionary<Keys, bool> KeysHolding { get; set; }
         private Dictionary<Keys, AutoResetEvent> KeysCancel { get; set; }
 

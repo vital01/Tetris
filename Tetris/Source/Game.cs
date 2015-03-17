@@ -46,7 +46,7 @@ namespace Tetris
                 { 
                     while (true)
                     {
-                        Figure = new Figure(NextId, Level <= 10 ? 1000 - (Level - 1) * 100 : 100 - Level % 10 * 10);
+                        Figure = new Figure(this, NextId, Level <= 10 ? 1000 - (Level - 1) * 100 : 100 - Level % 10 * 10);
                         NextId = Random.Next(7);
                         DrawNext();
                         int result = Figure.Activate();                       

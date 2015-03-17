@@ -17,6 +17,7 @@ namespace Tetris
         private static int AccelerationTimeout { get; set; }                                  
         private static object LockObject { get; set; }
         //для активации падения фигуры
+        private Game Game { get; set; }
         private bool Activated { get; set; }
         //ускорена?
         private bool Accelerated { get; set; }
@@ -220,8 +221,9 @@ namespace Tetris
             LockObject = new object();
         }
 
-        public Figure(int id, int timeout)
-        {           
+        public Figure(Game game, int id, int timeout)
+        {
+            Game = game;
             Activated = false;
             Accelerated = false;
             Paused = false;
@@ -229,7 +231,7 @@ namespace Tetris
             NormalTimeout = timeout;
             Timeout = NormalTimeout;
             LeftTimeout = Timeout;
-            Position = new Point(MainForm.Instance.Game.Field.ColumnCount / 2, 0);
+            Position = new Point(Game.Field.ColumnCount / 2, 0);
             SchemaId = 0;
             CancelTimeoutEvent = new AutoResetEvent(false);
             PauseEvent = new ManualResetEvent(true);
@@ -267,7 +269,7 @@ namespace Tetris
                                     Activated = false;
                                     for (int i = 0; i < 4; i++)
                                     {
-                                        MainForm.Instance.Game.Field.Matrix[Position.Y + Schemas[Id][SchemaId][i].Y, Position.X + Schemas[Id][SchemaId][i].X] = Id + 1;
+                                        Game.Field.Matrix[Position.Y + Schemas[Id][SchemaId][i].Y, Position.X + Schemas[Id][SchemaId][i].X] = Id + 1;
                                     }
                                     SoundPlayer.PlaySound(SoundPlayer.Sounds.Hit);
                                 }
@@ -349,16 +351,16 @@ namespace Tetris
             {
                 Thread.Sleep(150);
                 SoundPlayer.PlaySound(SoundPlayer.Sounds.Line);
-                for (int j = 0; j < MainForm.Instance.Game.Field.ColumnCount; j++)                
+                for (int j = 0; j < Game.Field.ColumnCount; j++)                
                 {
                     Thread.Sleep(20);
                     int bricksCleared = 0;
-                    for (int i = MainForm.Instance.Game.Field.RowCount - 1; i >= 0; i--)
+                    for (int i = Game.Field.RowCount - 1; i >= 0; i--)
                     {
                         if (rowsNumbers.Contains(i))
                         {
-                            MainForm.Instance.Game.Field.ClearCell(Color.Black, new Point(j, i));
-                            MainForm.Instance.Game.Field.Matrix[i, j] = 0;
+                            Game.Field.ClearCell(Color.Black, new Point(j, i));
+                            Game.Field.Matrix[i, j] = 0;
                             bricksCleared++;
                         }                   
                         if (bricksCleared == rowsNumbers.Count)
@@ -366,11 +368,11 @@ namespace Tetris
                             break;
                         }
                     }
-                    MainForm.Instance.Game.Field.Refresh();                  
+                    Game.Field.Refresh();                  
                 }
                 Thread.Sleep(150);
                 //опускание поля вниз
-                for (int j = 0; j < MainForm.Instance.Game.Field.ColumnCount; j++)
+                for (int j = 0; j < Game.Field.ColumnCount; j++)
                 {
                     int offset = 0;
                     for (int i = rowsNumbers[0]; i >= 0; i--)
@@ -381,17 +383,17 @@ namespace Tetris
                         }
                         else
                         {
-                            if (MainForm.Instance.Game.Field.Matrix[i, j] != 0)
+                            if (Game.Field.Matrix[i, j] != 0)
                             {
-                                MainForm.Instance.Game.Field.ClearCell(Color.Black, new Point(j, i));
-                                MainForm.Instance.Game.Field.PaintCell(Colors[MainForm.Instance.Game.Field.Matrix[i, j] - 1], new Point(j, i + offset));
-                                MainForm.Instance.Game.Field.Matrix[i + offset, j] = MainForm.Instance.Game.Field.Matrix[i, j];
-                                MainForm.Instance.Game.Field.Matrix[i, j] = 0;
+                                Game.Field.ClearCell(Color.Black, new Point(j, i));
+                                Game.Field.PaintCell(Colors[Game.Field.Matrix[i, j] - 1], new Point(j, i + offset));
+                                Game.Field.Matrix[i + offset, j] = Game.Field.Matrix[i, j];
+                                Game.Field.Matrix[i, j] = 0;
                             }
                         }
                     }
                 }
-                MainForm.Instance.Game.Field.Refresh();
+                Game.Field.Refresh();
             }
             return rowsNumbers.Count;
         }
@@ -399,17 +401,17 @@ namespace Tetris
         private bool TryFindLines(out List<int> rowsNumbers)
         {
             rowsNumbers = new List<int>();
-            for (int i = (MainForm.Instance.Game.Field.RowCount - 1); i >= 0; i--)
+            for (int i = (Game.Field.RowCount - 1); i >= 0; i--)
             {
                 int bricksCount = 0;
-                for (int j = 0; j < MainForm.Instance.Game.Field.ColumnCount; j++)
+                for (int j = 0; j < Game.Field.ColumnCount; j++)
                 {
-                    if (MainForm.Instance.Game.Field.Matrix[i, j] != 0)
+                    if (Game.Field.Matrix[i, j] != 0)
                     {
                         bricksCount++;
                     }
                 }
-                if (bricksCount == MainForm.Instance.Game.Field.ColumnCount)
+                if (bricksCount == Game.Field.ColumnCount)
                 {
                     rowsNumbers.Add(i);
                 }
@@ -439,9 +441,9 @@ namespace Tetris
                 {
                     if (ProjectionEnabled && drawProjection)
                     {
-                        MainForm.Instance.Game.Field.ClearCell(Color.Black, new Point(OldProjectionPosition.X + Schemas[Id][OldSchemaId][i].X, OldProjectionPosition.Y + Schemas[Id][OldSchemaId][i].Y));
+                        Game.Field.ClearCell(Color.Black, new Point(OldProjectionPosition.X + Schemas[Id][OldSchemaId][i].X, OldProjectionPosition.Y + Schemas[Id][OldSchemaId][i].Y));
                     }
-                    MainForm.Instance.Game.Field.ClearCell(Color.Black, new Point(OldPosition.X + Schemas[Id][OldSchemaId][i].X, OldPosition.Y + Schemas[Id][OldSchemaId][i].Y));
+                    Game.Field.ClearCell(Color.Black, new Point(OldPosition.X + Schemas[Id][OldSchemaId][i].X, OldPosition.Y + Schemas[Id][OldSchemaId][i].Y));
                 }
             }
             for (int i = 0; i < 4; i++)
@@ -449,14 +451,14 @@ namespace Tetris
                 if (ProjectionEnabled && drawProjection)
                 {
                     FindProjectionPosition();
-                    MainForm.Instance.Game.Field.PaintCell(Color.FromArgb(96, Colors[Id]), new Point(ProjectionPosition.X + Schemas[Id][SchemaId][i].X, ProjectionPosition.Y + Schemas[Id][SchemaId][i].Y));
+                    Game.Field.PaintCell(Color.FromArgb(96, Colors[Id]), new Point(ProjectionPosition.X + Schemas[Id][SchemaId][i].X, ProjectionPosition.Y + Schemas[Id][SchemaId][i].Y));
                     OldProjectionPosition = ProjectionPosition;
                 }
-                MainForm.Instance.Game.Field.PaintCell(Colors[Id], new Point(Position.X + Schemas[Id][SchemaId][i].X, Position.Y + Schemas[Id][SchemaId][i].Y));                
+                Game.Field.PaintCell(Colors[Id], new Point(Position.X + Schemas[Id][SchemaId][i].X, Position.Y + Schemas[Id][SchemaId][i].Y));                
             }
             OldSchemaId = SchemaId;
             OldPosition = Position;
-            MainForm.Instance.Game.Field.Refresh();
+            Game.Field.Refresh();
         }       
 
         private void FindProjectionPosition()
@@ -474,21 +476,21 @@ namespace Tetris
             {
                 if (direction == Direction.Down)
                 {
-                    if ((position.Y + Schemas[Id][SchemaId][i].Y) == (MainForm.Instance.Game.Field.RowCount - 1) || MainForm.Instance.Game.Field.Matrix[position.Y + Schemas[Id][SchemaId][i].Y + 1, position.X + Schemas[Id][SchemaId][i].X] != 0)
+                    if ((position.Y + Schemas[Id][SchemaId][i].Y) == (Game.Field.RowCount - 1) || Game.Field.Matrix[position.Y + Schemas[Id][SchemaId][i].Y + 1, position.X + Schemas[Id][SchemaId][i].X] != 0)
                     {
                         return true;
                     }
                 }
                 if (direction == Direction.Left)
                 {
-                    if ((position.X + Schemas[Id][SchemaId][i].X) == 0 || MainForm.Instance.Game.Field.Matrix[position.Y + Schemas[Id][SchemaId][i].Y, position.X + Schemas[Id][SchemaId][i].X - 1] != 0)
+                    if ((position.X + Schemas[Id][SchemaId][i].X) == 0 || Game.Field.Matrix[position.Y + Schemas[Id][SchemaId][i].Y, position.X + Schemas[Id][SchemaId][i].X - 1] != 0)
                     {
                         return true;
                     }
                 }
                 if (direction == Direction.Right)
                 {
-                    if ((position.X + Schemas[Id][SchemaId][i].X) == (MainForm.Instance.Game.Field.ColumnCount - 1) || MainForm.Instance.Game.Field.Matrix[position.Y + Schemas[Id][SchemaId][i].Y, position.X + Schemas[Id][SchemaId][i].X + 1] != 0)
+                    if ((position.X + Schemas[Id][SchemaId][i].X) == (Game.Field.ColumnCount - 1) || Game.Field.Matrix[position.Y + Schemas[Id][SchemaId][i].Y, position.X + Schemas[Id][SchemaId][i].X + 1] != 0)
                     {
                         return true;
                     }
@@ -501,7 +503,7 @@ namespace Tetris
         {
             for (int i = 0; i < 4; i++)
             {
-                if (MainForm.Instance.Game.Field.Matrix[Position.Y + Schemas[Id][schemaId][i].Y, Position.X + Schemas[Id][schemaId][i].X] != 0)
+                if (Game.Field.Matrix[Position.Y + Schemas[Id][schemaId][i].Y, Position.X + Schemas[Id][schemaId][i].X] != 0)
                 {
                     return true;
                 }
@@ -514,7 +516,7 @@ namespace Tetris
         {
             for (int i = 0; i < 4; i++)
             {
-                if ((Position.X + Schemas[Id][(SchemaId + 1) % (Schemas[Id].Length)][i].X) < 0 || (Position.X + Schemas[Id][(SchemaId + 1) % (Schemas[Id].Length)][i].X) > (MainForm.Instance.Game.Field.ColumnCount - 1) || (Position.Y + Schemas[Id][(SchemaId + 1) % (Schemas[Id].Length)][i].Y) > (MainForm.Instance.Game.Field.RowCount - 1))
+                if ((Position.X + Schemas[Id][(SchemaId + 1) % (Schemas[Id].Length)][i].X) < 0 || (Position.X + Schemas[Id][(SchemaId + 1) % (Schemas[Id].Length)][i].X) > (Game.Field.ColumnCount - 1) || (Position.Y + Schemas[Id][(SchemaId + 1) % (Schemas[Id].Length)][i].Y) > (Game.Field.RowCount - 1))
                 {
                     return true;
                 }
