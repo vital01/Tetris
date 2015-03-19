@@ -14,18 +14,25 @@ namespace Tetris
         public int Level { get; private set; }
         public int Score { get; private set; }
         public int Lines { get; private set; }
-        private static Random Random { get; set; }
+        private Random Random { get; set; }
         private int LinesLeft { get; set; }        
         private int NextId { get; set; }       
 
         static Game()
         {
             Running = false;
-            Random = new System.Random();
         }
 
-        public Game(PictureBox fieldPicture)
+        public Game(PictureBox fieldPicture, int rn = -1)
         {
+            if (rn == -1)
+            {
+                Random = new Random();
+            }
+            else
+            {
+                Random = new Random(rn);
+            }
             Level = 1;
             Score = 0;
             Lines = 0;
@@ -39,7 +46,7 @@ namespace Tetris
         public void Start()
         {
             Running = true;
-            NextId = Random.Next(7);
+            NextId = Random.Next(0, 6);
             SoundPlayer.PlayBackground();
             Task.Factory.StartNew
                 (delegate()
@@ -47,7 +54,7 @@ namespace Tetris
                     while (true)
                     {
                         Figure = new Figure(this, NextId, Level <= 10 ? 1000 - (Level - 1) * 100 : 100 - Level % 10 * 10);
-                        NextId = Random.Next(7);
+                        NextId = Random.Next(0, 6);
                         DrawNext();
                         int result = Figure.Activate();                       
                         if (result == 5)
