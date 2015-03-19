@@ -24,7 +24,7 @@ namespace Tetris
             Random = new System.Random();
         }
 
-        public Game()
+        public Game(PictureBox fieldPicture)
         {
             Level = 1;
             Score = 0;
@@ -33,7 +33,7 @@ namespace Tetris
             MainForm.BeginInvokeControl(MainForm.Instance.levelNumberLabel, new Action(() => { MainForm.Instance.levelNumberLabel.Text = Level.ToString(); }));
             MainForm.BeginInvokeControl(MainForm.Instance.scoreNumberLabel, new Action(() => { MainForm.Instance.scoreNumberLabel.Text = Score.ToString(); }));
             MainForm.BeginInvokeControl(MainForm.Instance.linesNumberLabel, new Action(() => { MainForm.Instance.linesNumberLabel.Text = Lines.ToString(); }));
-            Field = new Field();
+            Field = new Field(fieldPicture);
         }
 
         public void Start()

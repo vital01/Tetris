@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System.Windows.Forms;
 
 namespace Tetris
 {
@@ -7,13 +8,15 @@ namespace Tetris
         public int RowCount { get; private set; }
         public int ColumnCount { get; private set; }
         public int[,] Matrix { get; private set; }
+        private PictureBox FieldPicture { get; set; }
         private Bitmap Bitmap { get; set; }
         private Graphics Graphics { get; set; }
 
-        public Field()
+        public Field(PictureBox fieldPicture)
         {
-            RowCount = MainForm.Instance.fieldPicture.Height / Figure.BrickSize;
-            ColumnCount = MainForm.Instance.fieldPicture.Width / Figure.BrickSize;
+            FieldPicture = fieldPicture;
+            RowCount = FieldPicture.Height / Figure.BrickSize;
+            ColumnCount = FieldPicture.Width / Figure.BrickSize;
             Matrix = new int[RowCount, ColumnCount];
             Bitmap = new Bitmap(ColumnCount * Figure.BrickSize, RowCount * Figure.BrickSize);
             Graphics = Graphics.FromImage(Bitmap);
@@ -31,7 +34,7 @@ namespace Tetris
 
         public void Refresh()
         {
-            Drawing.RefreshImage(MainForm.Instance.fieldPicture, Bitmap);
+            Drawing.RefreshImage(FieldPicture, Bitmap);
         }
     }
 }

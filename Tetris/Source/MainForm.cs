@@ -202,7 +202,7 @@ namespace Tetris
                                         delegate()
                                         {
                                             SoundPlayer.StopMenu();
-                                            Game = new Game();
+                                            Game = new Game(fieldPicture);
                                             Game.Start();
                                             BeginInvokeControl(gamePanel, new Action(() => { gamePanel.BringToFront(); }));
                                         });
