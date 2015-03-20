@@ -298,7 +298,7 @@ namespace Tetris
                     Paused = true;
                     PauseEvent.Reset();
                     CancelTimeoutEvent.Set();
-                    MainForm.Instance.infoLabel.Visible = true;
+                    MainForm.Instance.infoLabel1.Visible = true;
                     MainForm.CenterInfoLabel("Pause");
                     SoundPlayer.PauseBackground();
                     SoundPlayer.PlaySound(SoundPlayer.Sounds.Pause);
@@ -306,7 +306,7 @@ namespace Tetris
                 else
                 {
                     PauseEvent.Set();
-                    MainForm.Instance.infoLabel.Visible = false;
+                    MainForm.Instance.infoLabel1.Visible = false;
                     SoundPlayer.ResumeBackground();
                 }
             }

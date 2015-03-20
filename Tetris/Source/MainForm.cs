@@ -49,8 +49,8 @@ namespace Tetris
 
         public static void CenterInfoLabel(string text)
         {
-            BeginInvokeControl(MainForm.Instance.infoLabel, new Action(() => { MainForm.Instance.infoLabel.Text = text; }));
-            BeginInvokeControl(MainForm.Instance.infoLabel, new Action(() => { MainForm.Instance.infoLabel.Location = new Point((MainForm.Instance.fieldPicture.Width - MainForm.Instance.infoLabel.Width) / 2, (MainForm.Instance.fieldPicture.Height - MainForm.Instance.infoLabel.Height) / 2); }));
+            BeginInvokeControl(MainForm.Instance.infoLabel1, new Action(() => { MainForm.Instance.infoLabel1.Text = text; }));
+            BeginInvokeControl(MainForm.Instance.infoLabel1, new Action(() => { MainForm.Instance.infoLabel1.Location = new Point((MainForm.Instance.fieldPicture1.Width - MainForm.Instance.infoLabel1.Width) / 2, (MainForm.Instance.fieldPicture1.Height - MainForm.Instance.infoLabel1.Height) / 2); }));
         }
 
         private static void SetDoubleBuffered(Control parent)
@@ -85,13 +85,22 @@ namespace Tetris
             #endregion
             #region Изменение шрифтов
             PrivateFontCollection FontCollection = ResourceLoader.LoadFont();
-            levelLabel.Font = new Font(FontCollection.Families[0], 24, FontStyle.Underline);
-            levelNumberLabel.Font = new Font(FontCollection.Families[0], 20);
-            scoreLabel.Font = new Font(FontCollection.Families[0], 24, FontStyle.Underline);
-            scoreNumberLabel.Font = new Font(FontCollection.Families[0], 20);
-            linesLabel.Font = new Font(FontCollection.Families[0], 24, FontStyle.Underline);
-            linesNumberLabel.Font = new Font(FontCollection.Families[0], 20);
-            nextLabel.Font = new Font(FontCollection.Families[0], 24, FontStyle.Underline);
+            infoLabel1.Font = new Font(FontCollection.Families[0], 24);
+            levelLabel1.Font = new Font(FontCollection.Families[0], 24, FontStyle.Underline);
+            levelNumberLabel1.Font = new Font(FontCollection.Families[0], 20);
+            scoreLabel1.Font = new Font(FontCollection.Families[0], 24, FontStyle.Underline);
+            scoreNumberLabel1.Font = new Font(FontCollection.Families[0], 20);
+            linesLabel1.Font = new Font(FontCollection.Families[0], 24, FontStyle.Underline);
+            linesNumberLabel1.Font = new Font(FontCollection.Families[0], 20);
+            nextLabel1.Font = new Font(FontCollection.Families[0], 24, FontStyle.Underline);
+            infoLabel2.Font = new Font(FontCollection.Families[0], 24);
+            levelLabel2.Font = new Font(FontCollection.Families[0], 24, FontStyle.Underline);
+            levelNumberLabel2.Font = new Font(FontCollection.Families[0], 20);
+            scoreLabel2.Font = new Font(FontCollection.Families[0], 24, FontStyle.Underline);
+            scoreNumberLabel2.Font = new Font(FontCollection.Families[0], 20);
+            linesLabel2.Font = new Font(FontCollection.Families[0], 24, FontStyle.Underline);
+            linesNumberLabel2.Font = new Font(FontCollection.Families[0], 20);
+            nextLabel2.Font = new Font(FontCollection.Families[0], 24, FontStyle.Underline);
             _1PlayerLabel.Font = new Font(FontCollection.Families[0], 18);
             _2PlayersLabel.Font = new Font(FontCollection.Families[0], 18);
             optionsLabel.Font = new Font(FontCollection.Families[0], 18);
@@ -128,7 +137,7 @@ namespace Tetris
             digit10Label.Font = new Font(FontCollection.Families[0], 16, FontStyle.Underline);
             digit11Label.Font = new Font(FontCollection.Families[0], 16, FontStyle.Underline);
             digit12Label.Font = new Font(FontCollection.Families[0], 16, FontStyle.Underline);
-            infoLabel.Font = new Font(FontCollection.Families[0], 24);
+            
             #endregion
             SoundPlayer.LoadMusic();
             SoundPlayer.LoadSounds();
@@ -202,7 +211,7 @@ namespace Tetris
                                         delegate()
                                         {
                                             SoundPlayer.StopMenu();
-                                            Game = new Game(fieldPicture);
+                                            Game = new Game(fieldPicture1);
                                             Game.Start();
                                             BeginInvokeControl(gamePanel, new Action(() => { gamePanel.BringToFront(); }));
                                         });
@@ -257,7 +266,7 @@ namespace Tetris
                                 if (!SoundPlayer.SoundFinished(SoundPlayer.Sounds.GameOver) && !Game.Running)
                                 {
                                     SoundPlayer.StopSound(SoundPlayer.Sounds.GameOver);
-                                    infoLabel.Visible = false;
+                                    infoLabel1.Visible = false;
                                     menuPanel.BringToFront();
                                     SoundPlayer.PlayMenu();
                                 }

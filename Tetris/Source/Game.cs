@@ -37,9 +37,9 @@ namespace Tetris
             Score = 0;
             Lines = 0;
             LinesLeft = 5 * Level;
-            MainForm.BeginInvokeControl(MainForm.Instance.levelNumberLabel, new Action(() => { MainForm.Instance.levelNumberLabel.Text = Level.ToString(); }));
-            MainForm.BeginInvokeControl(MainForm.Instance.scoreNumberLabel, new Action(() => { MainForm.Instance.scoreNumberLabel.Text = Score.ToString(); }));
-            MainForm.BeginInvokeControl(MainForm.Instance.linesNumberLabel, new Action(() => { MainForm.Instance.linesNumberLabel.Text = Lines.ToString(); }));
+            MainForm.BeginInvokeControl(MainForm.Instance.levelNumberLabel1, new Action(() => { MainForm.Instance.levelNumberLabel1.Text = Level.ToString(); }));
+            MainForm.BeginInvokeControl(MainForm.Instance.scoreNumberLabel1, new Action(() => { MainForm.Instance.scoreNumberLabel1.Text = Score.ToString(); }));
+            MainForm.BeginInvokeControl(MainForm.Instance.linesNumberLabel1, new Action(() => { MainForm.Instance.linesNumberLabel1.Text = Lines.ToString(); }));
             Field = new Field(fieldPicture);
         }
 
@@ -63,7 +63,7 @@ namespace Tetris
                             Thread.Sleep(1500);
                             SoundPlayer.StopBackground();
                             SoundPlayer.PlaySound(SoundPlayer.Sounds.GameOver);
-                            MainForm.BeginInvokeControl(MainForm.Instance.infoLabel, new Action(() => { MainForm.Instance.infoLabel.Visible = true; }));
+                            MainForm.BeginInvokeControl(MainForm.Instance.infoLabel1, new Action(() => { MainForm.Instance.infoLabel1.Visible = true; }));
                             MainForm.CenterInfoLabel("Game\nOver");
                             break;
                         }
@@ -78,15 +78,15 @@ namespace Tetris
                                     {
                                         Level++;
                                         LinesLeft = (5 * Level) + LinesLeft;
-                                        MainForm.BeginInvokeControl(MainForm.Instance.levelNumberLabel, new Action(() => { MainForm.Instance.levelNumberLabel.Text = Level.ToString(); }));
-                                        Animator.FlickerLabel(MainForm.Instance.levelNumberLabel, 100, 10);
+                                        MainForm.BeginInvokeControl(MainForm.Instance.levelNumberLabel1, new Action(() => { MainForm.Instance.levelNumberLabel1.Text = Level.ToString(); }));
+                                        Animator.FlickerLabel(MainForm.Instance.levelNumberLabel1, 100, 10);
                                     }
                                 }
-                                MainForm.BeginInvokeControl(MainForm.Instance.linesNumberLabel, new Action(() => { MainForm.Instance.linesNumberLabel.Text = Lines.ToString(); }));
+                                MainForm.BeginInvokeControl(MainForm.Instance.linesNumberLabel1, new Action(() => { MainForm.Instance.linesNumberLabel1.Text = Lines.ToString(); }));
                                 
                             }
                         Score += result * (100 + 10 * (Level - 1)) + 10;
-                        MainForm.BeginInvokeControl(MainForm.Instance.scoreNumberLabel, new Action(() => { MainForm.Instance.scoreNumberLabel.Text = Score.ToString(); }));
+                        MainForm.BeginInvokeControl(MainForm.Instance.scoreNumberLabel1, new Action(() => { MainForm.Instance.scoreNumberLabel1.Text = Score.ToString(); }));
                     }
                 });
         }
@@ -101,7 +101,7 @@ namespace Tetris
                 {
                     Drawing.PaintCell(graphics, Figure.Colors[NextId], new Point(position.X + Figure.Schemas[NextId][0][i].X, position.Y + Figure.Schemas[NextId][0][i].Y));
                 }
-                Drawing.RefreshImage(MainForm.Instance.nextPicture, bitmap);
+                Drawing.RefreshImage(MainForm.Instance.nextPicture1, bitmap);
             }
         }
     }
