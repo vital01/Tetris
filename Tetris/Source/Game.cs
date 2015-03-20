@@ -23,9 +23,9 @@ namespace Tetris
             Running = false;
         }
 
-        public Game(PictureBox fieldPicture, int rn = -1)
+        public Game(PictureBox fieldPicture, int rn = 0)
         {
-            if (rn == -1)
+            if (rn == 0)
             {
                 Random = new Random();
             }

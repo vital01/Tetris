@@ -4,24 +4,35 @@ namespace Tetris
 {
     public class Random
     {
-        private const double a = 614657;
-        private const double m = 1336337;
+        private const double a = 8503057;
+        private const double m = 9834497;
         private double Rn { get; set; }
 
-        public Random(int rn = -1)
+        public Random(int rn = 0)
         {
-            if (rn == -1)
+            if (rn < 0)
             {
-                Rn = new System.Random().Next(Int32.MaxValue);
+                throw new ArgumentOutOfRangeException();
             }
             else
             {
-                Rn = rn;
+                if (rn == 0)
+                {
+                    Rn = new System.Random().Next(int.MaxValue) + 1;
+                }
+                else
+                {
+                    Rn = rn;
+                }
             }
         }
 
         public int Next(int min, int max)
         {
+            if (min > max)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
             Rn = a * Rn % m;
             return Convert.ToInt32(min + (max - min) * (Rn / m));
         }
