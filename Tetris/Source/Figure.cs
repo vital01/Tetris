@@ -15,7 +15,7 @@ namespace Tetris
         public static Point[][][] Schemas { get; private set; }
         //скорость при нажатии вниз
         private static int AccelerationTimeout { get; set; }                                  
-        private static object LockObject { get; set; }
+        private object LockObject { get; set; }
         //для активации падения фигуры
         private Game Game { get; set; }
         private bool Activated { get; set; }
@@ -217,12 +217,12 @@ namespace Tetris
                     }
                 }
                 #endregion
-            };
-            LockObject = new object();
+            };            
         }
 
         public Figure(Game game, int id, int timeout)
         {
+            LockObject = new object();
             Game = game;
             Activated = false;
             Accelerated = false;
