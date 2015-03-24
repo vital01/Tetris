@@ -64,7 +64,8 @@ namespace Tetris
                             SoundPlayer.StopBackground();
                             SoundPlayer.PlaySound(SoundPlayer.Sounds.GameOver);
                             MainForm.BeginInvokeControl(MainForm.Instance.infoLabel1, new Action(() => { MainForm.Instance.infoLabel1.Visible = true; }));
-                            MainForm.CenterInfoLabel("Game\nOver");
+                            MainForm.BeginInvokeControl(MainForm.Instance.infoLabel1, new Action(() => { MainForm.Instance.infoLabel1.Text = "Game\nOver"; }));
+                            MainForm.CenterControl(MainForm.Instance.infoLabel1);
                             break;
                         }
                         else
