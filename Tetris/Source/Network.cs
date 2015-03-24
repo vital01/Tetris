@@ -21,6 +21,7 @@ namespace Tetris
                     try
                     {
                         Server.Start();
+                        MainForm.ShowNetworkGame();
                         AcceptClients();
                     }
                     catch (SocketException)
@@ -90,6 +91,10 @@ namespace Tetris
             {
                 MainForm.ShowError("Game is already running!");
                 Client.Close();
+            }
+            else
+            {
+                MainForm.ShowNetworkGame();
             }
         }
     }

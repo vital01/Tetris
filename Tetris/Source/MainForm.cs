@@ -47,10 +47,9 @@ namespace Tetris
             SoundPlayer.PlaySound(SoundPlayer.Sounds.Error);
         }
 
-        public static void CenterInfoLabel(string text)
+        public static void CenterControl(Control control)
         {
-            BeginInvokeControl(MainForm.Instance.infoLabel1, new Action(() => { MainForm.Instance.infoLabel1.Text = text; }));
-            BeginInvokeControl(MainForm.Instance.infoLabel1, new Action(() => { MainForm.Instance.infoLabel1.Location = new Point((MainForm.Instance.fieldPicture1.Width - MainForm.Instance.infoLabel1.Width) / 2, (MainForm.Instance.fieldPicture1.Height - MainForm.Instance.infoLabel1.Height) / 2); }));
+            BeginInvokeControl(control, new Action(() => { control.Location = new Point((control.Parent.Width - control.Width) / 2, (control.Parent.Height - control.Height) / 2); }));
         }
 
         private static void SetDoubleBuffered(Control parent)
@@ -62,7 +61,27 @@ namespace Tetris
             }
         }
 
+        public static void ShowNetworkGame()
+        {
+            BeginInvokeControl(Instance, new Action(() => { Instance.SuspendLayout(); }));
+            BeginInvokeControl(Instance.mainPanel1, new Action(() => { Instance.mainPanel1.Visible = false; }));
+            BeginInvokeControl(Instance.mainPanel2, new Action(() => { Instance.mainPanel2.Visible = false; }));
+            BeginInvokeControl(Instance.gamePanel, new Action(() => { Instance.gamePanel.BringToFront(); }));
+            Thread.Sleep(10);
+            for (int i = 0; i < 5; i++)
+            {
+                BeginInvokeControl(Instance, new Action(() => { Instance.Width += 98; }));
+                BeginInvokeControl(Instance, new Action(() => { Instance.Location = new Point(Instance.Location.X - 49, Instance.Location.Y); }));
+                Thread.Sleep(10);
 
+            }
+            BeginInvokeControl(Instance, new Action(() => { Instance.Width += 3; }));
+            BeginInvokeControl(Instance, new Action(() => { Instance.Location = new Point(Instance.Location.X - 1, Instance.Location.Y); }));
+            Thread.Sleep(10);
+            BeginInvokeControl(Instance.mainPanel1, new Action(() => { Instance.mainPanel1.Visible = true; }));
+            BeginInvokeControl(Instance.mainPanel2, new Action(() => { Instance.mainPanel2.Visible = true; }));
+            BeginInvokeControl(Instance, new Action(() => { Instance.ResumeLayout(); }));
+        }
 
         private void MainForm_Load(object sender, EventArgs e)
         {

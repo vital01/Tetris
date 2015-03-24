@@ -43,6 +43,19 @@
             this.levelLabel1 = new System.Windows.Forms.Label();
             this.nextPicture1 = new System.Windows.Forms.PictureBox();
             this.gamePanel = new System.Windows.Forms.Panel();
+            this.mainPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.fieldPanel2 = new System.Windows.Forms.Panel();
+            this.infoLabel2 = new System.Windows.Forms.Label();
+            this.fieldPicture2 = new System.Windows.Forms.PictureBox();
+            this.statisticsPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.nextLabel2 = new System.Windows.Forms.Label();
+            this.linesNumberLabel2 = new System.Windows.Forms.Label();
+            this.linesLabel2 = new System.Windows.Forms.Label();
+            this.scoreNumberLabel2 = new System.Windows.Forms.Label();
+            this.scoreLabel2 = new System.Windows.Forms.Label();
+            this.levelNumberLabel2 = new System.Windows.Forms.Label();
+            this.levelLabel2 = new System.Windows.Forms.Label();
+            this.nextPicture2 = new System.Windows.Forms.PictureBox();
             this.menuPanel = new System.Windows.Forms.TableLayoutPanel();
             this.titlePicture = new System.Windows.Forms.PictureBox();
             this.copyrightLabel = new System.Windows.Forms.Label();
@@ -90,25 +103,17 @@
             this.leftLabel = new System.Windows.Forms.Label();
             this.rightLabel = new System.Windows.Forms.Label();
             this.keyboardSelectorPicture = new System.Windows.Forms.PictureBox();
-            this.mainPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.fieldPanel2 = new System.Windows.Forms.Panel();
-            this.infoLabel2 = new System.Windows.Forms.Label();
-            this.fieldPicture2 = new System.Windows.Forms.PictureBox();
-            this.statisticsPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.nextLabel2 = new System.Windows.Forms.Label();
-            this.linesNumberLabel2 = new System.Windows.Forms.Label();
-            this.linesLabel2 = new System.Windows.Forms.Label();
-            this.scoreNumberLabel2 = new System.Windows.Forms.Label();
-            this.scoreLabel2 = new System.Windows.Forms.Label();
-            this.levelNumberLabel2 = new System.Windows.Forms.Label();
-            this.levelLabel2 = new System.Windows.Forms.Label();
-            this.nextPicture2 = new System.Windows.Forms.PictureBox();
             this.mainPanel1.SuspendLayout();
             this.fieldPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fieldPicture1)).BeginInit();
             this.infoPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nextPicture1)).BeginInit();
             this.gamePanel.SuspendLayout();
+            this.mainPanel2.SuspendLayout();
+            this.fieldPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fieldPicture2)).BeginInit();
+            this.statisticsPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nextPicture2)).BeginInit();
             this.menuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.titlePicture)).BeginInit();
             this.menuListPanel.SuspendLayout();
@@ -120,11 +125,6 @@
             this.textPanel.SuspendLayout();
             this.keyboardPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.keyboardSelectorPicture)).BeginInit();
-            this.mainPanel2.SuspendLayout();
-            this.fieldPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fieldPicture2)).BeginInit();
-            this.statisticsPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nextPicture2)).BeginInit();
             this.SuspendLayout();
             // 
             // mainPanel1
@@ -320,740 +320,8 @@
             this.gamePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gamePanel.Location = new System.Drawing.Point(0, 0);
             this.gamePanel.Name = "gamePanel";
-            this.gamePanel.Size = new System.Drawing.Size(998, 453);
+            this.gamePanel.Size = new System.Drawing.Size(505, 453);
             this.gamePanel.TabIndex = 2;
-            // 
-            // menuPanel
-            // 
-            this.menuPanel.ColumnCount = 1;
-            this.menuPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.menuPanel.Controls.Add(this.titlePicture, 0, 0);
-            this.menuPanel.Controls.Add(this.copyrightLabel, 0, 2);
-            this.menuPanel.Controls.Add(this.menuListPanel, 0, 1);
-            this.menuPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.menuPanel.Location = new System.Drawing.Point(0, 0);
-            this.menuPanel.Name = "menuPanel";
-            this.menuPanel.RowCount = 3;
-            this.menuPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.menuPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.menuPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.menuPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.menuPanel.Size = new System.Drawing.Size(998, 453);
-            this.menuPanel.TabIndex = 0;
-            // 
-            // titlePicture
-            // 
-            this.titlePicture.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.titlePicture.Image = ((System.Drawing.Image)(resources.GetObject("titlePicture.Image")));
-            this.titlePicture.Location = new System.Drawing.Point(3, 3);
-            this.titlePicture.Name = "titlePicture";
-            this.titlePicture.Size = new System.Drawing.Size(992, 172);
-            this.titlePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.titlePicture.TabIndex = 0;
-            this.titlePicture.TabStop = false;
-            // 
-            // copyrightLabel
-            // 
-            this.copyrightLabel.AutoSize = true;
-            this.copyrightLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.copyrightLabel.Font = new System.Drawing.Font("Half Bold Pixel-7", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.copyrightLabel.ForeColor = System.Drawing.Color.White;
-            this.copyrightLabel.Location = new System.Drawing.Point(3, 421);
-            this.copyrightLabel.Margin = new System.Windows.Forms.Padding(3);
-            this.copyrightLabel.Name = "copyrightLabel";
-            this.copyrightLabel.Size = new System.Drawing.Size(992, 29);
-            this.copyrightLabel.TabIndex = 1;
-            this.copyrightLabel.Text = "© Bitgames 2015";
-            this.copyrightLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // menuListPanel
-            // 
-            this.menuListPanel.ColumnCount = 2;
-            this.menuListPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23F));
-            this.menuListPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77F));
-            this.menuListPanel.Controls.Add(this._1PlayerLabel, 1, 0);
-            this.menuListPanel.Controls.Add(this._2PlayersLabel, 1, 1);
-            this.menuListPanel.Controls.Add(this.optionsLabel, 1, 2);
-            this.menuListPanel.Controls.Add(this.exitLabel, 1, 3);
-            this.menuListPanel.Controls.Add(this.menuSelectorPicture, 0, 0);
-            this.menuListPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.menuListPanel.Location = new System.Drawing.Point(150, 203);
-            this.menuListPanel.Margin = new System.Windows.Forms.Padding(150, 25, 150, 25);
-            this.menuListPanel.Name = "menuListPanel";
-            this.menuListPanel.RowCount = 4;
-            this.menuListPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.menuListPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.menuListPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.menuListPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.menuListPanel.Size = new System.Drawing.Size(698, 190);
-            this.menuListPanel.TabIndex = 2;
-            // 
-            // _1PlayerLabel
-            // 
-            this._1PlayerLabel.AutoSize = true;
-            this._1PlayerLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._1PlayerLabel.Font = new System.Drawing.Font("Half Bold Pixel-7", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this._1PlayerLabel.ForeColor = System.Drawing.Color.White;
-            this._1PlayerLabel.Location = new System.Drawing.Point(163, 3);
-            this._1PlayerLabel.Margin = new System.Windows.Forms.Padding(3);
-            this._1PlayerLabel.Name = "_1PlayerLabel";
-            this._1PlayerLabel.Size = new System.Drawing.Size(532, 41);
-            this._1PlayerLabel.TabIndex = 2;
-            this._1PlayerLabel.Text = "1 Player";
-            this._1PlayerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // _2PlayersLabel
-            // 
-            this._2PlayersLabel.AutoSize = true;
-            this._2PlayersLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._2PlayersLabel.Font = new System.Drawing.Font("Half Bold Pixel-7", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this._2PlayersLabel.ForeColor = System.Drawing.Color.White;
-            this._2PlayersLabel.Location = new System.Drawing.Point(163, 50);
-            this._2PlayersLabel.Margin = new System.Windows.Forms.Padding(3);
-            this._2PlayersLabel.Name = "_2PlayersLabel";
-            this._2PlayersLabel.Size = new System.Drawing.Size(532, 41);
-            this._2PlayersLabel.TabIndex = 4;
-            this._2PlayersLabel.Text = "2 Players";
-            this._2PlayersLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // optionsLabel
-            // 
-            this.optionsLabel.AutoSize = true;
-            this.optionsLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.optionsLabel.Font = new System.Drawing.Font("Half Bold Pixel-7", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.optionsLabel.ForeColor = System.Drawing.Color.White;
-            this.optionsLabel.Location = new System.Drawing.Point(163, 97);
-            this.optionsLabel.Margin = new System.Windows.Forms.Padding(3);
-            this.optionsLabel.Name = "optionsLabel";
-            this.optionsLabel.Size = new System.Drawing.Size(532, 41);
-            this.optionsLabel.TabIndex = 3;
-            this.optionsLabel.Text = "Options";
-            this.optionsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // exitLabel
-            // 
-            this.exitLabel.AutoSize = true;
-            this.exitLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.exitLabel.Font = new System.Drawing.Font("Half Bold Pixel-7", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.exitLabel.ForeColor = System.Drawing.Color.White;
-            this.exitLabel.Location = new System.Drawing.Point(163, 144);
-            this.exitLabel.Margin = new System.Windows.Forms.Padding(3);
-            this.exitLabel.Name = "exitLabel";
-            this.exitLabel.Size = new System.Drawing.Size(532, 43);
-            this.exitLabel.TabIndex = 5;
-            this.exitLabel.Text = "Exit";
-            this.exitLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // menuSelectorPicture
-            // 
-            this.menuSelectorPicture.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.menuSelectorPicture.Image = ((System.Drawing.Image)(resources.GetObject("menuSelectorPicture.Image")));
-            this.menuSelectorPicture.Location = new System.Drawing.Point(3, 3);
-            this.menuSelectorPicture.Name = "menuSelectorPicture";
-            this.menuSelectorPicture.Size = new System.Drawing.Size(154, 41);
-            this.menuSelectorPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.menuSelectorPicture.TabIndex = 1;
-            this.menuSelectorPicture.TabStop = false;
-            // 
-            // networkPanel
-            // 
-            this.networkPanel.ColumnCount = 1;
-            this.networkPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.networkPanel.Controls.Add(this.networkListPanel, 0, 1);
-            this.networkPanel.Controls.Add(this.errorLabel, 0, 0);
-            this.networkPanel.Controls.Add(this.inputPanel, 0, 2);
-            this.networkPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.networkPanel.Location = new System.Drawing.Point(0, 0);
-            this.networkPanel.Name = "networkPanel";
-            this.networkPanel.RowCount = 3;
-            this.networkPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.networkPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65F));
-            this.networkPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.networkPanel.Size = new System.Drawing.Size(998, 453);
-            this.networkPanel.TabIndex = 2;
-            // 
-            // networkListPanel
-            // 
-            this.networkListPanel.ColumnCount = 2;
-            this.networkListPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23F));
-            this.networkListPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77F));
-            this.networkListPanel.Controls.Add(this.joinGameLabel, 1, 1);
-            this.networkListPanel.Controls.Add(this.backLabel, 1, 2);
-            this.networkListPanel.Controls.Add(this.openGameLabel, 1, 0);
-            this.networkListPanel.Controls.Add(this.networkSelectorPicture, 0, 0);
-            this.networkListPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.networkListPanel.Location = new System.Drawing.Point(150, 100);
-            this.networkListPanel.Margin = new System.Windows.Forms.Padding(150, 65, 150, 65);
-            this.networkListPanel.Name = "networkListPanel";
-            this.networkListPanel.RowCount = 3;
-            this.networkListPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.networkListPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.networkListPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.networkListPanel.Size = new System.Drawing.Size(698, 141);
-            this.networkListPanel.TabIndex = 3;
-            // 
-            // joinGameLabel
-            // 
-            this.joinGameLabel.AutoSize = true;
-            this.joinGameLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.joinGameLabel.Font = new System.Drawing.Font("Half Bold Pixel-7", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.joinGameLabel.ForeColor = System.Drawing.Color.White;
-            this.joinGameLabel.Location = new System.Drawing.Point(163, 50);
-            this.joinGameLabel.Margin = new System.Windows.Forms.Padding(3);
-            this.joinGameLabel.Name = "joinGameLabel";
-            this.joinGameLabel.Size = new System.Drawing.Size(532, 41);
-            this.joinGameLabel.TabIndex = 4;
-            this.joinGameLabel.Text = "Join Game";
-            this.joinGameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // backLabel
-            // 
-            this.backLabel.AutoSize = true;
-            this.backLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.backLabel.Font = new System.Drawing.Font("Half Bold Pixel-7", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.backLabel.ForeColor = System.Drawing.Color.White;
-            this.backLabel.Location = new System.Drawing.Point(163, 97);
-            this.backLabel.Margin = new System.Windows.Forms.Padding(3);
-            this.backLabel.Name = "backLabel";
-            this.backLabel.Size = new System.Drawing.Size(532, 41);
-            this.backLabel.TabIndex = 3;
-            this.backLabel.Text = "Back";
-            this.backLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // openGameLabel
-            // 
-            this.openGameLabel.AutoSize = true;
-            this.openGameLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.openGameLabel.Font = new System.Drawing.Font("Half Bold Pixel-7", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.openGameLabel.ForeColor = System.Drawing.Color.White;
-            this.openGameLabel.Location = new System.Drawing.Point(163, 3);
-            this.openGameLabel.Margin = new System.Windows.Forms.Padding(3);
-            this.openGameLabel.Name = "openGameLabel";
-            this.openGameLabel.Size = new System.Drawing.Size(532, 41);
-            this.openGameLabel.TabIndex = 2;
-            this.openGameLabel.Text = "Open Game";
-            this.openGameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // networkSelectorPicture
-            // 
-            this.networkSelectorPicture.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.networkSelectorPicture.Image = ((System.Drawing.Image)(resources.GetObject("networkSelectorPicture.Image")));
-            this.networkSelectorPicture.Location = new System.Drawing.Point(3, 3);
-            this.networkSelectorPicture.Name = "networkSelectorPicture";
-            this.networkSelectorPicture.Size = new System.Drawing.Size(154, 41);
-            this.networkSelectorPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.networkSelectorPicture.TabIndex = 1;
-            this.networkSelectorPicture.TabStop = false;
-            // 
-            // errorLabel
-            // 
-            this.errorLabel.AutoSize = true;
-            this.errorLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.errorLabel.Font = new System.Drawing.Font("Half Bold Pixel-7", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.errorLabel.ForeColor = System.Drawing.Color.Black;
-            this.errorLabel.Location = new System.Drawing.Point(3, 3);
-            this.errorLabel.Margin = new System.Windows.Forms.Padding(3);
-            this.errorLabel.Name = "errorLabel";
-            this.errorLabel.Size = new System.Drawing.Size(992, 29);
-            this.errorLabel.TabIndex = 2;
-            this.errorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // inputPanel
-            // 
-            this.inputPanel.ColumnCount = 1;
-            this.inputPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.inputPanel.Controls.Add(this.textPanel, 0, 1);
-            this.inputPanel.Controls.Add(this.keyboardPanel, 0, 0);
-            this.inputPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.inputPanel.Location = new System.Drawing.Point(51, 324);
-            this.inputPanel.Margin = new System.Windows.Forms.Padding(51, 18, 51, 18);
-            this.inputPanel.Name = "inputPanel";
-            this.inputPanel.RowCount = 2;
-            this.inputPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65F));
-            this.inputPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.inputPanel.Size = new System.Drawing.Size(896, 111);
-            this.inputPanel.TabIndex = 4;
-            this.inputPanel.Visible = false;
-            this.inputPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.inputPanel_Paint);
-            // 
-            // textPanel
-            // 
-            this.textPanel.ColumnCount = 15;
-            this.textPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.666666F));
-            this.textPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.666666F));
-            this.textPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.666666F));
-            this.textPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.666666F));
-            this.textPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.666666F));
-            this.textPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.666666F));
-            this.textPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.666666F));
-            this.textPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.666666F));
-            this.textPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.666666F));
-            this.textPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.666666F));
-            this.textPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.666666F));
-            this.textPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.666666F));
-            this.textPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.666666F));
-            this.textPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.666666F));
-            this.textPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.666666F));
-            this.textPanel.Controls.Add(this.digit1Label, 0, 0);
-            this.textPanel.Controls.Add(this.digit2Label, 1, 0);
-            this.textPanel.Controls.Add(this.digit3Label, 2, 0);
-            this.textPanel.Controls.Add(this.dot1Label, 3, 0);
-            this.textPanel.Controls.Add(this.digit4Label, 4, 0);
-            this.textPanel.Controls.Add(this.digit5Label, 5, 0);
-            this.textPanel.Controls.Add(this.digit6Label, 6, 0);
-            this.textPanel.Controls.Add(this.dot2Label, 7, 0);
-            this.textPanel.Controls.Add(this.digit7Label, 8, 0);
-            this.textPanel.Controls.Add(this.digit8Label, 9, 0);
-            this.textPanel.Controls.Add(this.digit9Label, 10, 0);
-            this.textPanel.Controls.Add(this.dot3Label, 11, 0);
-            this.textPanel.Controls.Add(this.digit10Label, 12, 0);
-            this.textPanel.Controls.Add(this.digit11Label, 13, 0);
-            this.textPanel.Controls.Add(this.digit12Label, 14, 0);
-            this.textPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textPanel.Location = new System.Drawing.Point(6, 75);
-            this.textPanel.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
-            this.textPanel.Name = "textPanel";
-            this.textPanel.RowCount = 1;
-            this.textPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.textPanel.Size = new System.Drawing.Size(884, 33);
-            this.textPanel.TabIndex = 1;
-            this.textPanel.Tag = "0";
-            // 
-            // digit1Label
-            // 
-            this.digit1Label.AutoSize = true;
-            this.digit1Label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.digit1Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.digit1Label.ForeColor = System.Drawing.Color.White;
-            this.digit1Label.Location = new System.Drawing.Point(3, 3);
-            this.digit1Label.Margin = new System.Windows.Forms.Padding(3);
-            this.digit1Label.Name = "digit1Label";
-            this.digit1Label.Size = new System.Drawing.Size(52, 27);
-            this.digit1Label.TabIndex = 5;
-            this.digit1Label.Text = "1";
-            this.digit1Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // digit2Label
-            // 
-            this.digit2Label.AutoSize = true;
-            this.digit2Label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.digit2Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.digit2Label.ForeColor = System.Drawing.Color.White;
-            this.digit2Label.Location = new System.Drawing.Point(61, 3);
-            this.digit2Label.Margin = new System.Windows.Forms.Padding(3);
-            this.digit2Label.Name = "digit2Label";
-            this.digit2Label.Size = new System.Drawing.Size(52, 27);
-            this.digit2Label.TabIndex = 7;
-            this.digit2Label.Text = "2";
-            this.digit2Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // digit3Label
-            // 
-            this.digit3Label.AutoSize = true;
-            this.digit3Label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.digit3Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.digit3Label.ForeColor = System.Drawing.Color.White;
-            this.digit3Label.Location = new System.Drawing.Point(119, 3);
-            this.digit3Label.Margin = new System.Windows.Forms.Padding(3);
-            this.digit3Label.Name = "digit3Label";
-            this.digit3Label.Size = new System.Drawing.Size(52, 27);
-            this.digit3Label.TabIndex = 6;
-            this.digit3Label.Text = "7";
-            this.digit3Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // dot1Label
-            // 
-            this.dot1Label.AutoSize = true;
-            this.dot1Label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dot1Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dot1Label.ForeColor = System.Drawing.Color.White;
-            this.dot1Label.Location = new System.Drawing.Point(177, 3);
-            this.dot1Label.Margin = new System.Windows.Forms.Padding(3);
-            this.dot1Label.Name = "dot1Label";
-            this.dot1Label.Size = new System.Drawing.Size(52, 27);
-            this.dot1Label.TabIndex = 8;
-            this.dot1Label.Text = ".";
-            this.dot1Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // digit4Label
-            // 
-            this.digit4Label.AutoSize = true;
-            this.digit4Label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.digit4Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.digit4Label.ForeColor = System.Drawing.Color.White;
-            this.digit4Label.Location = new System.Drawing.Point(235, 3);
-            this.digit4Label.Margin = new System.Windows.Forms.Padding(3);
-            this.digit4Label.Name = "digit4Label";
-            this.digit4Label.Size = new System.Drawing.Size(52, 27);
-            this.digit4Label.TabIndex = 9;
-            this.digit4Label.Text = "0";
-            this.digit4Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // digit5Label
-            // 
-            this.digit5Label.AutoSize = true;
-            this.digit5Label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.digit5Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.digit5Label.ForeColor = System.Drawing.Color.White;
-            this.digit5Label.Location = new System.Drawing.Point(293, 3);
-            this.digit5Label.Margin = new System.Windows.Forms.Padding(3);
-            this.digit5Label.Name = "digit5Label";
-            this.digit5Label.Size = new System.Drawing.Size(52, 27);
-            this.digit5Label.TabIndex = 10;
-            this.digit5Label.Text = "0";
-            this.digit5Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // digit6Label
-            // 
-            this.digit6Label.AutoSize = true;
-            this.digit6Label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.digit6Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.digit6Label.ForeColor = System.Drawing.Color.White;
-            this.digit6Label.Location = new System.Drawing.Point(351, 3);
-            this.digit6Label.Margin = new System.Windows.Forms.Padding(3);
-            this.digit6Label.Name = "digit6Label";
-            this.digit6Label.Size = new System.Drawing.Size(52, 27);
-            this.digit6Label.TabIndex = 11;
-            this.digit6Label.Text = "0";
-            this.digit6Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // dot2Label
-            // 
-            this.dot2Label.AutoSize = true;
-            this.dot2Label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dot2Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dot2Label.ForeColor = System.Drawing.Color.White;
-            this.dot2Label.Location = new System.Drawing.Point(409, 3);
-            this.dot2Label.Margin = new System.Windows.Forms.Padding(3);
-            this.dot2Label.Name = "dot2Label";
-            this.dot2Label.Size = new System.Drawing.Size(52, 27);
-            this.dot2Label.TabIndex = 12;
-            this.dot2Label.Text = ".";
-            this.dot2Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // digit7Label
-            // 
-            this.digit7Label.AutoSize = true;
-            this.digit7Label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.digit7Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.digit7Label.ForeColor = System.Drawing.Color.White;
-            this.digit7Label.Location = new System.Drawing.Point(467, 3);
-            this.digit7Label.Margin = new System.Windows.Forms.Padding(3);
-            this.digit7Label.Name = "digit7Label";
-            this.digit7Label.Size = new System.Drawing.Size(52, 27);
-            this.digit7Label.TabIndex = 13;
-            this.digit7Label.Text = "0";
-            this.digit7Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // digit8Label
-            // 
-            this.digit8Label.AutoSize = true;
-            this.digit8Label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.digit8Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.digit8Label.ForeColor = System.Drawing.Color.White;
-            this.digit8Label.Location = new System.Drawing.Point(525, 3);
-            this.digit8Label.Margin = new System.Windows.Forms.Padding(3);
-            this.digit8Label.Name = "digit8Label";
-            this.digit8Label.Size = new System.Drawing.Size(52, 27);
-            this.digit8Label.TabIndex = 14;
-            this.digit8Label.Text = "0";
-            this.digit8Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // digit9Label
-            // 
-            this.digit9Label.AutoSize = true;
-            this.digit9Label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.digit9Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.digit9Label.ForeColor = System.Drawing.Color.White;
-            this.digit9Label.Location = new System.Drawing.Point(583, 3);
-            this.digit9Label.Margin = new System.Windows.Forms.Padding(3);
-            this.digit9Label.Name = "digit9Label";
-            this.digit9Label.Size = new System.Drawing.Size(52, 27);
-            this.digit9Label.TabIndex = 15;
-            this.digit9Label.Text = "0";
-            this.digit9Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // dot3Label
-            // 
-            this.dot3Label.AutoSize = true;
-            this.dot3Label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dot3Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dot3Label.ForeColor = System.Drawing.Color.White;
-            this.dot3Label.Location = new System.Drawing.Point(641, 3);
-            this.dot3Label.Margin = new System.Windows.Forms.Padding(3);
-            this.dot3Label.Name = "dot3Label";
-            this.dot3Label.Size = new System.Drawing.Size(52, 27);
-            this.dot3Label.TabIndex = 16;
-            this.dot3Label.Text = ".";
-            this.dot3Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // digit10Label
-            // 
-            this.digit10Label.AutoSize = true;
-            this.digit10Label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.digit10Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.digit10Label.ForeColor = System.Drawing.Color.White;
-            this.digit10Label.Location = new System.Drawing.Point(699, 3);
-            this.digit10Label.Margin = new System.Windows.Forms.Padding(3);
-            this.digit10Label.Name = "digit10Label";
-            this.digit10Label.Size = new System.Drawing.Size(52, 27);
-            this.digit10Label.TabIndex = 17;
-            this.digit10Label.Text = "0";
-            this.digit10Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // digit11Label
-            // 
-            this.digit11Label.AutoSize = true;
-            this.digit11Label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.digit11Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.digit11Label.ForeColor = System.Drawing.Color.White;
-            this.digit11Label.Location = new System.Drawing.Point(757, 3);
-            this.digit11Label.Margin = new System.Windows.Forms.Padding(3);
-            this.digit11Label.Name = "digit11Label";
-            this.digit11Label.Size = new System.Drawing.Size(52, 27);
-            this.digit11Label.TabIndex = 18;
-            this.digit11Label.Text = "0";
-            this.digit11Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // digit12Label
-            // 
-            this.digit12Label.AutoSize = true;
-            this.digit12Label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.digit12Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.digit12Label.ForeColor = System.Drawing.Color.White;
-            this.digit12Label.Location = new System.Drawing.Point(815, 3);
-            this.digit12Label.Margin = new System.Windows.Forms.Padding(3);
-            this.digit12Label.Name = "digit12Label";
-            this.digit12Label.Size = new System.Drawing.Size(66, 27);
-            this.digit12Label.TabIndex = 19;
-            this.digit12Label.Text = "1";
-            this.digit12Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // keyboardPanel
-            // 
-            this.keyboardPanel.ColumnCount = 12;
-            this.keyboardPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            this.keyboardPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            this.keyboardPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            this.keyboardPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            this.keyboardPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            this.keyboardPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            this.keyboardPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            this.keyboardPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            this.keyboardPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            this.keyboardPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            this.keyboardPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            this.keyboardPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            this.keyboardPanel.Controls.Add(this._0Label, 0, 0);
-            this.keyboardPanel.Controls.Add(this._1Label, 1, 0);
-            this.keyboardPanel.Controls.Add(this._2Label, 2, 0);
-            this.keyboardPanel.Controls.Add(this._3Label, 3, 0);
-            this.keyboardPanel.Controls.Add(this._4Label, 4, 0);
-            this.keyboardPanel.Controls.Add(this._5Label, 5, 0);
-            this.keyboardPanel.Controls.Add(this._6Label, 6, 0);
-            this.keyboardPanel.Controls.Add(this._7Label, 7, 0);
-            this.keyboardPanel.Controls.Add(this._8Label, 8, 0);
-            this.keyboardPanel.Controls.Add(this._9Label, 9, 0);
-            this.keyboardPanel.Controls.Add(this.leftLabel, 10, 0);
-            this.keyboardPanel.Controls.Add(this.rightLabel, 11, 0);
-            this.keyboardPanel.Controls.Add(this.keyboardSelectorPicture, 0, 1);
-            this.keyboardPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.keyboardPanel.Location = new System.Drawing.Point(3, 3);
-            this.keyboardPanel.Name = "keyboardPanel";
-            this.keyboardPanel.RowCount = 2;
-            this.keyboardPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.keyboardPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.keyboardPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.keyboardPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.keyboardPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.keyboardPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.keyboardPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.keyboardPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.keyboardPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.keyboardPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.keyboardPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.keyboardPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.keyboardPanel.Size = new System.Drawing.Size(890, 66);
-            this.keyboardPanel.TabIndex = 0;
-            // 
-            // _0Label
-            // 
-            this._0Label.AutoSize = true;
-            this._0Label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._0Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this._0Label.ForeColor = System.Drawing.Color.White;
-            this._0Label.Location = new System.Drawing.Point(3, 3);
-            this._0Label.Margin = new System.Windows.Forms.Padding(3);
-            this._0Label.Name = "_0Label";
-            this._0Label.Size = new System.Drawing.Size(68, 27);
-            this._0Label.TabIndex = 3;
-            this._0Label.Text = "0";
-            this._0Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // _1Label
-            // 
-            this._1Label.AutoSize = true;
-            this._1Label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._1Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this._1Label.ForeColor = System.Drawing.Color.White;
-            this._1Label.Location = new System.Drawing.Point(77, 3);
-            this._1Label.Margin = new System.Windows.Forms.Padding(3);
-            this._1Label.Name = "_1Label";
-            this._1Label.Size = new System.Drawing.Size(68, 27);
-            this._1Label.TabIndex = 4;
-            this._1Label.Text = "1";
-            this._1Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // _2Label
-            // 
-            this._2Label.AutoSize = true;
-            this._2Label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._2Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this._2Label.ForeColor = System.Drawing.Color.White;
-            this._2Label.Location = new System.Drawing.Point(151, 3);
-            this._2Label.Margin = new System.Windows.Forms.Padding(3);
-            this._2Label.Name = "_2Label";
-            this._2Label.Size = new System.Drawing.Size(68, 27);
-            this._2Label.TabIndex = 5;
-            this._2Label.Text = "2";
-            this._2Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // _3Label
-            // 
-            this._3Label.AutoSize = true;
-            this._3Label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._3Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this._3Label.ForeColor = System.Drawing.Color.White;
-            this._3Label.Location = new System.Drawing.Point(225, 3);
-            this._3Label.Margin = new System.Windows.Forms.Padding(3);
-            this._3Label.Name = "_3Label";
-            this._3Label.Size = new System.Drawing.Size(68, 27);
-            this._3Label.TabIndex = 6;
-            this._3Label.Text = "3";
-            this._3Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // _4Label
-            // 
-            this._4Label.AutoSize = true;
-            this._4Label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._4Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this._4Label.ForeColor = System.Drawing.Color.White;
-            this._4Label.Location = new System.Drawing.Point(299, 3);
-            this._4Label.Margin = new System.Windows.Forms.Padding(3);
-            this._4Label.Name = "_4Label";
-            this._4Label.Size = new System.Drawing.Size(68, 27);
-            this._4Label.TabIndex = 7;
-            this._4Label.Text = "4";
-            this._4Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // _5Label
-            // 
-            this._5Label.AutoSize = true;
-            this._5Label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._5Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this._5Label.ForeColor = System.Drawing.Color.White;
-            this._5Label.Location = new System.Drawing.Point(373, 3);
-            this._5Label.Margin = new System.Windows.Forms.Padding(3);
-            this._5Label.Name = "_5Label";
-            this._5Label.Size = new System.Drawing.Size(68, 27);
-            this._5Label.TabIndex = 8;
-            this._5Label.Text = "5";
-            this._5Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // _6Label
-            // 
-            this._6Label.AutoSize = true;
-            this._6Label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._6Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this._6Label.ForeColor = System.Drawing.Color.White;
-            this._6Label.Location = new System.Drawing.Point(447, 3);
-            this._6Label.Margin = new System.Windows.Forms.Padding(3);
-            this._6Label.Name = "_6Label";
-            this._6Label.Size = new System.Drawing.Size(68, 27);
-            this._6Label.TabIndex = 9;
-            this._6Label.Text = "6";
-            this._6Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // _7Label
-            // 
-            this._7Label.AutoSize = true;
-            this._7Label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._7Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this._7Label.ForeColor = System.Drawing.Color.White;
-            this._7Label.Location = new System.Drawing.Point(521, 3);
-            this._7Label.Margin = new System.Windows.Forms.Padding(3);
-            this._7Label.Name = "_7Label";
-            this._7Label.Size = new System.Drawing.Size(68, 27);
-            this._7Label.TabIndex = 10;
-            this._7Label.Text = "7";
-            this._7Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // _8Label
-            // 
-            this._8Label.AutoSize = true;
-            this._8Label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._8Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this._8Label.ForeColor = System.Drawing.Color.White;
-            this._8Label.Location = new System.Drawing.Point(595, 3);
-            this._8Label.Margin = new System.Windows.Forms.Padding(3);
-            this._8Label.Name = "_8Label";
-            this._8Label.Size = new System.Drawing.Size(68, 27);
-            this._8Label.TabIndex = 11;
-            this._8Label.Text = "8";
-            this._8Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // _9Label
-            // 
-            this._9Label.AutoSize = true;
-            this._9Label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._9Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this._9Label.ForeColor = System.Drawing.Color.White;
-            this._9Label.Location = new System.Drawing.Point(669, 3);
-            this._9Label.Margin = new System.Windows.Forms.Padding(3);
-            this._9Label.Name = "_9Label";
-            this._9Label.Size = new System.Drawing.Size(68, 27);
-            this._9Label.TabIndex = 12;
-            this._9Label.Text = "9";
-            this._9Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // leftLabel
-            // 
-            this.leftLabel.AutoSize = true;
-            this.leftLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.leftLabel.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.leftLabel.ForeColor = System.Drawing.Color.White;
-            this.leftLabel.Location = new System.Drawing.Point(743, 3);
-            this.leftLabel.Margin = new System.Windows.Forms.Padding(3);
-            this.leftLabel.Name = "leftLabel";
-            this.leftLabel.Size = new System.Drawing.Size(68, 27);
-            this.leftLabel.TabIndex = 13;
-            this.leftLabel.Text = "◄";
-            this.leftLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // rightLabel
-            // 
-            this.rightLabel.AutoSize = true;
-            this.rightLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rightLabel.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.rightLabel.ForeColor = System.Drawing.Color.White;
-            this.rightLabel.Location = new System.Drawing.Point(817, 3);
-            this.rightLabel.Margin = new System.Windows.Forms.Padding(3);
-            this.rightLabel.Name = "rightLabel";
-            this.rightLabel.Size = new System.Drawing.Size(70, 27);
-            this.rightLabel.TabIndex = 14;
-            this.rightLabel.Text = "►";
-            this.rightLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // keyboardSelectorPicture
-            // 
-            this.keyboardSelectorPicture.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.keyboardSelectorPicture.Image = ((System.Drawing.Image)(resources.GetObject("keyboardSelectorPicture.Image")));
-            this.keyboardSelectorPicture.Location = new System.Drawing.Point(3, 36);
-            this.keyboardSelectorPicture.Name = "keyboardSelectorPicture";
-            this.keyboardSelectorPicture.Size = new System.Drawing.Size(68, 27);
-            this.keyboardSelectorPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.keyboardSelectorPicture.TabIndex = 15;
-            this.keyboardSelectorPicture.TabStop = false;
             // 
             // mainPanel2
             // 
@@ -1240,14 +508,746 @@
             this.nextPicture2.TabIndex = 7;
             this.nextPicture2.TabStop = false;
             // 
+            // menuPanel
+            // 
+            this.menuPanel.ColumnCount = 1;
+            this.menuPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.menuPanel.Controls.Add(this.titlePicture, 0, 0);
+            this.menuPanel.Controls.Add(this.copyrightLabel, 0, 2);
+            this.menuPanel.Controls.Add(this.menuListPanel, 0, 1);
+            this.menuPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.menuPanel.Location = new System.Drawing.Point(0, 0);
+            this.menuPanel.Name = "menuPanel";
+            this.menuPanel.RowCount = 3;
+            this.menuPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.menuPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.menuPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.menuPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.menuPanel.Size = new System.Drawing.Size(505, 453);
+            this.menuPanel.TabIndex = 0;
+            // 
+            // titlePicture
+            // 
+            this.titlePicture.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.titlePicture.Image = ((System.Drawing.Image)(resources.GetObject("titlePicture.Image")));
+            this.titlePicture.Location = new System.Drawing.Point(3, 3);
+            this.titlePicture.Name = "titlePicture";
+            this.titlePicture.Size = new System.Drawing.Size(499, 172);
+            this.titlePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.titlePicture.TabIndex = 0;
+            this.titlePicture.TabStop = false;
+            // 
+            // copyrightLabel
+            // 
+            this.copyrightLabel.AutoSize = true;
+            this.copyrightLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.copyrightLabel.Font = new System.Drawing.Font("Half Bold Pixel-7", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.copyrightLabel.ForeColor = System.Drawing.Color.White;
+            this.copyrightLabel.Location = new System.Drawing.Point(3, 421);
+            this.copyrightLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.copyrightLabel.Name = "copyrightLabel";
+            this.copyrightLabel.Size = new System.Drawing.Size(499, 29);
+            this.copyrightLabel.TabIndex = 1;
+            this.copyrightLabel.Text = "© Bitgames 2015";
+            this.copyrightLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // menuListPanel
+            // 
+            this.menuListPanel.ColumnCount = 2;
+            this.menuListPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23F));
+            this.menuListPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77F));
+            this.menuListPanel.Controls.Add(this._1PlayerLabel, 1, 0);
+            this.menuListPanel.Controls.Add(this._2PlayersLabel, 1, 1);
+            this.menuListPanel.Controls.Add(this.optionsLabel, 1, 2);
+            this.menuListPanel.Controls.Add(this.exitLabel, 1, 3);
+            this.menuListPanel.Controls.Add(this.menuSelectorPicture, 0, 0);
+            this.menuListPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.menuListPanel.Location = new System.Drawing.Point(150, 203);
+            this.menuListPanel.Margin = new System.Windows.Forms.Padding(150, 25, 150, 25);
+            this.menuListPanel.Name = "menuListPanel";
+            this.menuListPanel.RowCount = 4;
+            this.menuListPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.menuListPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.menuListPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.menuListPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.menuListPanel.Size = new System.Drawing.Size(205, 190);
+            this.menuListPanel.TabIndex = 2;
+            // 
+            // _1PlayerLabel
+            // 
+            this._1PlayerLabel.AutoSize = true;
+            this._1PlayerLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._1PlayerLabel.Font = new System.Drawing.Font("Half Bold Pixel-7", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this._1PlayerLabel.ForeColor = System.Drawing.Color.White;
+            this._1PlayerLabel.Location = new System.Drawing.Point(50, 3);
+            this._1PlayerLabel.Margin = new System.Windows.Forms.Padding(3);
+            this._1PlayerLabel.Name = "_1PlayerLabel";
+            this._1PlayerLabel.Size = new System.Drawing.Size(152, 41);
+            this._1PlayerLabel.TabIndex = 2;
+            this._1PlayerLabel.Text = "1 Player";
+            this._1PlayerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // _2PlayersLabel
+            // 
+            this._2PlayersLabel.AutoSize = true;
+            this._2PlayersLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._2PlayersLabel.Font = new System.Drawing.Font("Half Bold Pixel-7", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this._2PlayersLabel.ForeColor = System.Drawing.Color.White;
+            this._2PlayersLabel.Location = new System.Drawing.Point(50, 50);
+            this._2PlayersLabel.Margin = new System.Windows.Forms.Padding(3);
+            this._2PlayersLabel.Name = "_2PlayersLabel";
+            this._2PlayersLabel.Size = new System.Drawing.Size(152, 41);
+            this._2PlayersLabel.TabIndex = 4;
+            this._2PlayersLabel.Text = "2 Players";
+            this._2PlayersLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // optionsLabel
+            // 
+            this.optionsLabel.AutoSize = true;
+            this.optionsLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.optionsLabel.Font = new System.Drawing.Font("Half Bold Pixel-7", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.optionsLabel.ForeColor = System.Drawing.Color.White;
+            this.optionsLabel.Location = new System.Drawing.Point(50, 97);
+            this.optionsLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.optionsLabel.Name = "optionsLabel";
+            this.optionsLabel.Size = new System.Drawing.Size(152, 41);
+            this.optionsLabel.TabIndex = 3;
+            this.optionsLabel.Text = "Options";
+            this.optionsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // exitLabel
+            // 
+            this.exitLabel.AutoSize = true;
+            this.exitLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.exitLabel.Font = new System.Drawing.Font("Half Bold Pixel-7", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.exitLabel.ForeColor = System.Drawing.Color.White;
+            this.exitLabel.Location = new System.Drawing.Point(50, 144);
+            this.exitLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.exitLabel.Name = "exitLabel";
+            this.exitLabel.Size = new System.Drawing.Size(152, 43);
+            this.exitLabel.TabIndex = 5;
+            this.exitLabel.Text = "Exit";
+            this.exitLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // menuSelectorPicture
+            // 
+            this.menuSelectorPicture.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.menuSelectorPicture.Image = ((System.Drawing.Image)(resources.GetObject("menuSelectorPicture.Image")));
+            this.menuSelectorPicture.Location = new System.Drawing.Point(3, 3);
+            this.menuSelectorPicture.Name = "menuSelectorPicture";
+            this.menuSelectorPicture.Size = new System.Drawing.Size(41, 41);
+            this.menuSelectorPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.menuSelectorPicture.TabIndex = 1;
+            this.menuSelectorPicture.TabStop = false;
+            // 
+            // networkPanel
+            // 
+            this.networkPanel.ColumnCount = 1;
+            this.networkPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.networkPanel.Controls.Add(this.networkListPanel, 0, 1);
+            this.networkPanel.Controls.Add(this.errorLabel, 0, 0);
+            this.networkPanel.Controls.Add(this.inputPanel, 0, 2);
+            this.networkPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.networkPanel.Location = new System.Drawing.Point(0, 0);
+            this.networkPanel.Name = "networkPanel";
+            this.networkPanel.RowCount = 3;
+            this.networkPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.networkPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65F));
+            this.networkPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.networkPanel.Size = new System.Drawing.Size(505, 453);
+            this.networkPanel.TabIndex = 2;
+            // 
+            // networkListPanel
+            // 
+            this.networkListPanel.ColumnCount = 2;
+            this.networkListPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23F));
+            this.networkListPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77F));
+            this.networkListPanel.Controls.Add(this.joinGameLabel, 1, 1);
+            this.networkListPanel.Controls.Add(this.backLabel, 1, 2);
+            this.networkListPanel.Controls.Add(this.openGameLabel, 1, 0);
+            this.networkListPanel.Controls.Add(this.networkSelectorPicture, 0, 0);
+            this.networkListPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.networkListPanel.Location = new System.Drawing.Point(150, 100);
+            this.networkListPanel.Margin = new System.Windows.Forms.Padding(150, 65, 150, 65);
+            this.networkListPanel.Name = "networkListPanel";
+            this.networkListPanel.RowCount = 3;
+            this.networkListPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.networkListPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.networkListPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.networkListPanel.Size = new System.Drawing.Size(205, 141);
+            this.networkListPanel.TabIndex = 3;
+            // 
+            // joinGameLabel
+            // 
+            this.joinGameLabel.AutoSize = true;
+            this.joinGameLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.joinGameLabel.Font = new System.Drawing.Font("Half Bold Pixel-7", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.joinGameLabel.ForeColor = System.Drawing.Color.White;
+            this.joinGameLabel.Location = new System.Drawing.Point(50, 50);
+            this.joinGameLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.joinGameLabel.Name = "joinGameLabel";
+            this.joinGameLabel.Size = new System.Drawing.Size(152, 41);
+            this.joinGameLabel.TabIndex = 4;
+            this.joinGameLabel.Text = "Join Game";
+            this.joinGameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // backLabel
+            // 
+            this.backLabel.AutoSize = true;
+            this.backLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.backLabel.Font = new System.Drawing.Font("Half Bold Pixel-7", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.backLabel.ForeColor = System.Drawing.Color.White;
+            this.backLabel.Location = new System.Drawing.Point(50, 97);
+            this.backLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.backLabel.Name = "backLabel";
+            this.backLabel.Size = new System.Drawing.Size(152, 41);
+            this.backLabel.TabIndex = 3;
+            this.backLabel.Text = "Back";
+            this.backLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // openGameLabel
+            // 
+            this.openGameLabel.AutoSize = true;
+            this.openGameLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.openGameLabel.Font = new System.Drawing.Font("Half Bold Pixel-7", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.openGameLabel.ForeColor = System.Drawing.Color.White;
+            this.openGameLabel.Location = new System.Drawing.Point(50, 3);
+            this.openGameLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.openGameLabel.Name = "openGameLabel";
+            this.openGameLabel.Size = new System.Drawing.Size(152, 41);
+            this.openGameLabel.TabIndex = 2;
+            this.openGameLabel.Text = "Open Game";
+            this.openGameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // networkSelectorPicture
+            // 
+            this.networkSelectorPicture.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.networkSelectorPicture.Image = ((System.Drawing.Image)(resources.GetObject("networkSelectorPicture.Image")));
+            this.networkSelectorPicture.Location = new System.Drawing.Point(3, 3);
+            this.networkSelectorPicture.Name = "networkSelectorPicture";
+            this.networkSelectorPicture.Size = new System.Drawing.Size(41, 41);
+            this.networkSelectorPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.networkSelectorPicture.TabIndex = 1;
+            this.networkSelectorPicture.TabStop = false;
+            // 
+            // errorLabel
+            // 
+            this.errorLabel.AutoSize = true;
+            this.errorLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.errorLabel.Font = new System.Drawing.Font("Half Bold Pixel-7", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.errorLabel.ForeColor = System.Drawing.Color.Black;
+            this.errorLabel.Location = new System.Drawing.Point(3, 3);
+            this.errorLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.errorLabel.Name = "errorLabel";
+            this.errorLabel.Size = new System.Drawing.Size(499, 29);
+            this.errorLabel.TabIndex = 2;
+            this.errorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // inputPanel
+            // 
+            this.inputPanel.ColumnCount = 1;
+            this.inputPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.inputPanel.Controls.Add(this.textPanel, 0, 1);
+            this.inputPanel.Controls.Add(this.keyboardPanel, 0, 0);
+            this.inputPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.inputPanel.Location = new System.Drawing.Point(51, 324);
+            this.inputPanel.Margin = new System.Windows.Forms.Padding(51, 18, 51, 18);
+            this.inputPanel.Name = "inputPanel";
+            this.inputPanel.RowCount = 2;
+            this.inputPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65F));
+            this.inputPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.inputPanel.Size = new System.Drawing.Size(403, 111);
+            this.inputPanel.TabIndex = 4;
+            this.inputPanel.Visible = false;
+            this.inputPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.inputPanel_Paint);
+            // 
+            // textPanel
+            // 
+            this.textPanel.ColumnCount = 15;
+            this.textPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.666666F));
+            this.textPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.666666F));
+            this.textPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.666666F));
+            this.textPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.666666F));
+            this.textPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.666666F));
+            this.textPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.666666F));
+            this.textPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.666666F));
+            this.textPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.666666F));
+            this.textPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.666666F));
+            this.textPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.666666F));
+            this.textPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.666666F));
+            this.textPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.666666F));
+            this.textPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.666666F));
+            this.textPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.666666F));
+            this.textPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.666666F));
+            this.textPanel.Controls.Add(this.digit1Label, 0, 0);
+            this.textPanel.Controls.Add(this.digit2Label, 1, 0);
+            this.textPanel.Controls.Add(this.digit3Label, 2, 0);
+            this.textPanel.Controls.Add(this.dot1Label, 3, 0);
+            this.textPanel.Controls.Add(this.digit4Label, 4, 0);
+            this.textPanel.Controls.Add(this.digit5Label, 5, 0);
+            this.textPanel.Controls.Add(this.digit6Label, 6, 0);
+            this.textPanel.Controls.Add(this.dot2Label, 7, 0);
+            this.textPanel.Controls.Add(this.digit7Label, 8, 0);
+            this.textPanel.Controls.Add(this.digit8Label, 9, 0);
+            this.textPanel.Controls.Add(this.digit9Label, 10, 0);
+            this.textPanel.Controls.Add(this.dot3Label, 11, 0);
+            this.textPanel.Controls.Add(this.digit10Label, 12, 0);
+            this.textPanel.Controls.Add(this.digit11Label, 13, 0);
+            this.textPanel.Controls.Add(this.digit12Label, 14, 0);
+            this.textPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textPanel.Location = new System.Drawing.Point(6, 75);
+            this.textPanel.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
+            this.textPanel.Name = "textPanel";
+            this.textPanel.RowCount = 1;
+            this.textPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.textPanel.Size = new System.Drawing.Size(391, 33);
+            this.textPanel.TabIndex = 1;
+            this.textPanel.Tag = "0";
+            // 
+            // digit1Label
+            // 
+            this.digit1Label.AutoSize = true;
+            this.digit1Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.digit1Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.digit1Label.ForeColor = System.Drawing.Color.White;
+            this.digit1Label.Location = new System.Drawing.Point(3, 3);
+            this.digit1Label.Margin = new System.Windows.Forms.Padding(3);
+            this.digit1Label.Name = "digit1Label";
+            this.digit1Label.Size = new System.Drawing.Size(20, 27);
+            this.digit1Label.TabIndex = 5;
+            this.digit1Label.Text = "1";
+            this.digit1Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // digit2Label
+            // 
+            this.digit2Label.AutoSize = true;
+            this.digit2Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.digit2Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.digit2Label.ForeColor = System.Drawing.Color.White;
+            this.digit2Label.Location = new System.Drawing.Point(29, 3);
+            this.digit2Label.Margin = new System.Windows.Forms.Padding(3);
+            this.digit2Label.Name = "digit2Label";
+            this.digit2Label.Size = new System.Drawing.Size(20, 27);
+            this.digit2Label.TabIndex = 7;
+            this.digit2Label.Text = "2";
+            this.digit2Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // digit3Label
+            // 
+            this.digit3Label.AutoSize = true;
+            this.digit3Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.digit3Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.digit3Label.ForeColor = System.Drawing.Color.White;
+            this.digit3Label.Location = new System.Drawing.Point(55, 3);
+            this.digit3Label.Margin = new System.Windows.Forms.Padding(3);
+            this.digit3Label.Name = "digit3Label";
+            this.digit3Label.Size = new System.Drawing.Size(20, 27);
+            this.digit3Label.TabIndex = 6;
+            this.digit3Label.Text = "7";
+            this.digit3Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dot1Label
+            // 
+            this.dot1Label.AutoSize = true;
+            this.dot1Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dot1Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dot1Label.ForeColor = System.Drawing.Color.White;
+            this.dot1Label.Location = new System.Drawing.Point(81, 3);
+            this.dot1Label.Margin = new System.Windows.Forms.Padding(3);
+            this.dot1Label.Name = "dot1Label";
+            this.dot1Label.Size = new System.Drawing.Size(20, 27);
+            this.dot1Label.TabIndex = 8;
+            this.dot1Label.Text = ".";
+            this.dot1Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // digit4Label
+            // 
+            this.digit4Label.AutoSize = true;
+            this.digit4Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.digit4Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.digit4Label.ForeColor = System.Drawing.Color.White;
+            this.digit4Label.Location = new System.Drawing.Point(107, 3);
+            this.digit4Label.Margin = new System.Windows.Forms.Padding(3);
+            this.digit4Label.Name = "digit4Label";
+            this.digit4Label.Size = new System.Drawing.Size(20, 27);
+            this.digit4Label.TabIndex = 9;
+            this.digit4Label.Text = "0";
+            this.digit4Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // digit5Label
+            // 
+            this.digit5Label.AutoSize = true;
+            this.digit5Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.digit5Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.digit5Label.ForeColor = System.Drawing.Color.White;
+            this.digit5Label.Location = new System.Drawing.Point(133, 3);
+            this.digit5Label.Margin = new System.Windows.Forms.Padding(3);
+            this.digit5Label.Name = "digit5Label";
+            this.digit5Label.Size = new System.Drawing.Size(20, 27);
+            this.digit5Label.TabIndex = 10;
+            this.digit5Label.Text = "0";
+            this.digit5Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // digit6Label
+            // 
+            this.digit6Label.AutoSize = true;
+            this.digit6Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.digit6Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.digit6Label.ForeColor = System.Drawing.Color.White;
+            this.digit6Label.Location = new System.Drawing.Point(159, 3);
+            this.digit6Label.Margin = new System.Windows.Forms.Padding(3);
+            this.digit6Label.Name = "digit6Label";
+            this.digit6Label.Size = new System.Drawing.Size(20, 27);
+            this.digit6Label.TabIndex = 11;
+            this.digit6Label.Text = "0";
+            this.digit6Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dot2Label
+            // 
+            this.dot2Label.AutoSize = true;
+            this.dot2Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dot2Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dot2Label.ForeColor = System.Drawing.Color.White;
+            this.dot2Label.Location = new System.Drawing.Point(185, 3);
+            this.dot2Label.Margin = new System.Windows.Forms.Padding(3);
+            this.dot2Label.Name = "dot2Label";
+            this.dot2Label.Size = new System.Drawing.Size(20, 27);
+            this.dot2Label.TabIndex = 12;
+            this.dot2Label.Text = ".";
+            this.dot2Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // digit7Label
+            // 
+            this.digit7Label.AutoSize = true;
+            this.digit7Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.digit7Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.digit7Label.ForeColor = System.Drawing.Color.White;
+            this.digit7Label.Location = new System.Drawing.Point(211, 3);
+            this.digit7Label.Margin = new System.Windows.Forms.Padding(3);
+            this.digit7Label.Name = "digit7Label";
+            this.digit7Label.Size = new System.Drawing.Size(20, 27);
+            this.digit7Label.TabIndex = 13;
+            this.digit7Label.Text = "0";
+            this.digit7Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // digit8Label
+            // 
+            this.digit8Label.AutoSize = true;
+            this.digit8Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.digit8Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.digit8Label.ForeColor = System.Drawing.Color.White;
+            this.digit8Label.Location = new System.Drawing.Point(237, 3);
+            this.digit8Label.Margin = new System.Windows.Forms.Padding(3);
+            this.digit8Label.Name = "digit8Label";
+            this.digit8Label.Size = new System.Drawing.Size(20, 27);
+            this.digit8Label.TabIndex = 14;
+            this.digit8Label.Text = "0";
+            this.digit8Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // digit9Label
+            // 
+            this.digit9Label.AutoSize = true;
+            this.digit9Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.digit9Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.digit9Label.ForeColor = System.Drawing.Color.White;
+            this.digit9Label.Location = new System.Drawing.Point(263, 3);
+            this.digit9Label.Margin = new System.Windows.Forms.Padding(3);
+            this.digit9Label.Name = "digit9Label";
+            this.digit9Label.Size = new System.Drawing.Size(20, 27);
+            this.digit9Label.TabIndex = 15;
+            this.digit9Label.Text = "0";
+            this.digit9Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dot3Label
+            // 
+            this.dot3Label.AutoSize = true;
+            this.dot3Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dot3Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dot3Label.ForeColor = System.Drawing.Color.White;
+            this.dot3Label.Location = new System.Drawing.Point(289, 3);
+            this.dot3Label.Margin = new System.Windows.Forms.Padding(3);
+            this.dot3Label.Name = "dot3Label";
+            this.dot3Label.Size = new System.Drawing.Size(20, 27);
+            this.dot3Label.TabIndex = 16;
+            this.dot3Label.Text = ".";
+            this.dot3Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // digit10Label
+            // 
+            this.digit10Label.AutoSize = true;
+            this.digit10Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.digit10Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.digit10Label.ForeColor = System.Drawing.Color.White;
+            this.digit10Label.Location = new System.Drawing.Point(315, 3);
+            this.digit10Label.Margin = new System.Windows.Forms.Padding(3);
+            this.digit10Label.Name = "digit10Label";
+            this.digit10Label.Size = new System.Drawing.Size(20, 27);
+            this.digit10Label.TabIndex = 17;
+            this.digit10Label.Text = "0";
+            this.digit10Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // digit11Label
+            // 
+            this.digit11Label.AutoSize = true;
+            this.digit11Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.digit11Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.digit11Label.ForeColor = System.Drawing.Color.White;
+            this.digit11Label.Location = new System.Drawing.Point(341, 3);
+            this.digit11Label.Margin = new System.Windows.Forms.Padding(3);
+            this.digit11Label.Name = "digit11Label";
+            this.digit11Label.Size = new System.Drawing.Size(20, 27);
+            this.digit11Label.TabIndex = 18;
+            this.digit11Label.Text = "0";
+            this.digit11Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // digit12Label
+            // 
+            this.digit12Label.AutoSize = true;
+            this.digit12Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.digit12Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.digit12Label.ForeColor = System.Drawing.Color.White;
+            this.digit12Label.Location = new System.Drawing.Point(367, 3);
+            this.digit12Label.Margin = new System.Windows.Forms.Padding(3);
+            this.digit12Label.Name = "digit12Label";
+            this.digit12Label.Size = new System.Drawing.Size(21, 27);
+            this.digit12Label.TabIndex = 19;
+            this.digit12Label.Text = "1";
+            this.digit12Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // keyboardPanel
+            // 
+            this.keyboardPanel.ColumnCount = 12;
+            this.keyboardPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+            this.keyboardPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+            this.keyboardPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+            this.keyboardPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+            this.keyboardPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+            this.keyboardPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+            this.keyboardPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+            this.keyboardPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+            this.keyboardPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+            this.keyboardPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+            this.keyboardPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+            this.keyboardPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+            this.keyboardPanel.Controls.Add(this._0Label, 0, 0);
+            this.keyboardPanel.Controls.Add(this._1Label, 1, 0);
+            this.keyboardPanel.Controls.Add(this._2Label, 2, 0);
+            this.keyboardPanel.Controls.Add(this._3Label, 3, 0);
+            this.keyboardPanel.Controls.Add(this._4Label, 4, 0);
+            this.keyboardPanel.Controls.Add(this._5Label, 5, 0);
+            this.keyboardPanel.Controls.Add(this._6Label, 6, 0);
+            this.keyboardPanel.Controls.Add(this._7Label, 7, 0);
+            this.keyboardPanel.Controls.Add(this._8Label, 8, 0);
+            this.keyboardPanel.Controls.Add(this._9Label, 9, 0);
+            this.keyboardPanel.Controls.Add(this.leftLabel, 10, 0);
+            this.keyboardPanel.Controls.Add(this.rightLabel, 11, 0);
+            this.keyboardPanel.Controls.Add(this.keyboardSelectorPicture, 0, 1);
+            this.keyboardPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.keyboardPanel.Location = new System.Drawing.Point(3, 3);
+            this.keyboardPanel.Name = "keyboardPanel";
+            this.keyboardPanel.RowCount = 2;
+            this.keyboardPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.keyboardPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.keyboardPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.keyboardPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.keyboardPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.keyboardPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.keyboardPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.keyboardPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.keyboardPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.keyboardPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.keyboardPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.keyboardPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.keyboardPanel.Size = new System.Drawing.Size(397, 66);
+            this.keyboardPanel.TabIndex = 0;
+            // 
+            // _0Label
+            // 
+            this._0Label.AutoSize = true;
+            this._0Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._0Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this._0Label.ForeColor = System.Drawing.Color.White;
+            this._0Label.Location = new System.Drawing.Point(3, 3);
+            this._0Label.Margin = new System.Windows.Forms.Padding(3);
+            this._0Label.Name = "_0Label";
+            this._0Label.Size = new System.Drawing.Size(27, 27);
+            this._0Label.TabIndex = 3;
+            this._0Label.Text = "0";
+            this._0Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // _1Label
+            // 
+            this._1Label.AutoSize = true;
+            this._1Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._1Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this._1Label.ForeColor = System.Drawing.Color.White;
+            this._1Label.Location = new System.Drawing.Point(36, 3);
+            this._1Label.Margin = new System.Windows.Forms.Padding(3);
+            this._1Label.Name = "_1Label";
+            this._1Label.Size = new System.Drawing.Size(27, 27);
+            this._1Label.TabIndex = 4;
+            this._1Label.Text = "1";
+            this._1Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // _2Label
+            // 
+            this._2Label.AutoSize = true;
+            this._2Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._2Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this._2Label.ForeColor = System.Drawing.Color.White;
+            this._2Label.Location = new System.Drawing.Point(69, 3);
+            this._2Label.Margin = new System.Windows.Forms.Padding(3);
+            this._2Label.Name = "_2Label";
+            this._2Label.Size = new System.Drawing.Size(27, 27);
+            this._2Label.TabIndex = 5;
+            this._2Label.Text = "2";
+            this._2Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // _3Label
+            // 
+            this._3Label.AutoSize = true;
+            this._3Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._3Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this._3Label.ForeColor = System.Drawing.Color.White;
+            this._3Label.Location = new System.Drawing.Point(102, 3);
+            this._3Label.Margin = new System.Windows.Forms.Padding(3);
+            this._3Label.Name = "_3Label";
+            this._3Label.Size = new System.Drawing.Size(27, 27);
+            this._3Label.TabIndex = 6;
+            this._3Label.Text = "3";
+            this._3Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // _4Label
+            // 
+            this._4Label.AutoSize = true;
+            this._4Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._4Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this._4Label.ForeColor = System.Drawing.Color.White;
+            this._4Label.Location = new System.Drawing.Point(135, 3);
+            this._4Label.Margin = new System.Windows.Forms.Padding(3);
+            this._4Label.Name = "_4Label";
+            this._4Label.Size = new System.Drawing.Size(27, 27);
+            this._4Label.TabIndex = 7;
+            this._4Label.Text = "4";
+            this._4Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // _5Label
+            // 
+            this._5Label.AutoSize = true;
+            this._5Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._5Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this._5Label.ForeColor = System.Drawing.Color.White;
+            this._5Label.Location = new System.Drawing.Point(168, 3);
+            this._5Label.Margin = new System.Windows.Forms.Padding(3);
+            this._5Label.Name = "_5Label";
+            this._5Label.Size = new System.Drawing.Size(27, 27);
+            this._5Label.TabIndex = 8;
+            this._5Label.Text = "5";
+            this._5Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // _6Label
+            // 
+            this._6Label.AutoSize = true;
+            this._6Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._6Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this._6Label.ForeColor = System.Drawing.Color.White;
+            this._6Label.Location = new System.Drawing.Point(201, 3);
+            this._6Label.Margin = new System.Windows.Forms.Padding(3);
+            this._6Label.Name = "_6Label";
+            this._6Label.Size = new System.Drawing.Size(27, 27);
+            this._6Label.TabIndex = 9;
+            this._6Label.Text = "6";
+            this._6Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // _7Label
+            // 
+            this._7Label.AutoSize = true;
+            this._7Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._7Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this._7Label.ForeColor = System.Drawing.Color.White;
+            this._7Label.Location = new System.Drawing.Point(234, 3);
+            this._7Label.Margin = new System.Windows.Forms.Padding(3);
+            this._7Label.Name = "_7Label";
+            this._7Label.Size = new System.Drawing.Size(27, 27);
+            this._7Label.TabIndex = 10;
+            this._7Label.Text = "7";
+            this._7Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // _8Label
+            // 
+            this._8Label.AutoSize = true;
+            this._8Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._8Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this._8Label.ForeColor = System.Drawing.Color.White;
+            this._8Label.Location = new System.Drawing.Point(267, 3);
+            this._8Label.Margin = new System.Windows.Forms.Padding(3);
+            this._8Label.Name = "_8Label";
+            this._8Label.Size = new System.Drawing.Size(27, 27);
+            this._8Label.TabIndex = 11;
+            this._8Label.Text = "8";
+            this._8Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // _9Label
+            // 
+            this._9Label.AutoSize = true;
+            this._9Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._9Label.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this._9Label.ForeColor = System.Drawing.Color.White;
+            this._9Label.Location = new System.Drawing.Point(300, 3);
+            this._9Label.Margin = new System.Windows.Forms.Padding(3);
+            this._9Label.Name = "_9Label";
+            this._9Label.Size = new System.Drawing.Size(27, 27);
+            this._9Label.TabIndex = 12;
+            this._9Label.Text = "9";
+            this._9Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // leftLabel
+            // 
+            this.leftLabel.AutoSize = true;
+            this.leftLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.leftLabel.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.leftLabel.ForeColor = System.Drawing.Color.White;
+            this.leftLabel.Location = new System.Drawing.Point(333, 3);
+            this.leftLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.leftLabel.Name = "leftLabel";
+            this.leftLabel.Size = new System.Drawing.Size(27, 27);
+            this.leftLabel.TabIndex = 13;
+            this.leftLabel.Text = "◄";
+            this.leftLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // rightLabel
+            // 
+            this.rightLabel.AutoSize = true;
+            this.rightLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rightLabel.Font = new System.Drawing.Font("Half Bold Pixel-7", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.rightLabel.ForeColor = System.Drawing.Color.White;
+            this.rightLabel.Location = new System.Drawing.Point(366, 3);
+            this.rightLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.rightLabel.Name = "rightLabel";
+            this.rightLabel.Size = new System.Drawing.Size(28, 27);
+            this.rightLabel.TabIndex = 14;
+            this.rightLabel.Text = "►";
+            this.rightLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // keyboardSelectorPicture
+            // 
+            this.keyboardSelectorPicture.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.keyboardSelectorPicture.Image = ((System.Drawing.Image)(resources.GetObject("keyboardSelectorPicture.Image")));
+            this.keyboardSelectorPicture.Location = new System.Drawing.Point(3, 36);
+            this.keyboardSelectorPicture.Name = "keyboardSelectorPicture";
+            this.keyboardSelectorPicture.Size = new System.Drawing.Size(27, 27);
+            this.keyboardSelectorPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.keyboardSelectorPicture.TabIndex = 15;
+            this.keyboardSelectorPicture.TabStop = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(998, 453);
-            this.Controls.Add(this.gamePanel);
+            this.ClientSize = new System.Drawing.Size(505, 453);
             this.Controls.Add(this.menuPanel);
+            this.Controls.Add(this.gamePanel);
             this.Controls.Add(this.networkPanel);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -1267,6 +1267,13 @@
             this.infoPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nextPicture1)).EndInit();
             this.gamePanel.ResumeLayout(false);
+            this.mainPanel2.ResumeLayout(false);
+            this.fieldPanel2.ResumeLayout(false);
+            this.fieldPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fieldPicture2)).EndInit();
+            this.statisticsPanel2.ResumeLayout(false);
+            this.statisticsPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nextPicture2)).EndInit();
             this.menuPanel.ResumeLayout(false);
             this.menuPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.titlePicture)).EndInit();
@@ -1284,13 +1291,6 @@
             this.keyboardPanel.ResumeLayout(false);
             this.keyboardPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.keyboardSelectorPicture)).EndInit();
-            this.mainPanel2.ResumeLayout(false);
-            this.fieldPanel2.ResumeLayout(false);
-            this.fieldPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fieldPicture2)).EndInit();
-            this.statisticsPanel2.ResumeLayout(false);
-            this.statisticsPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nextPicture2)).EndInit();
             this.ResumeLayout(false);
 
         }
