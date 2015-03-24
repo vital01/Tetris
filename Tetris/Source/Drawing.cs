@@ -10,9 +10,17 @@ namespace Tetris
 {
     public static class Drawing
     {
-        public static void PaintCell(Graphics graphics, Color color, Point position)
+        public static void PaintCell(Graphics graphics, Color color, Point position, bool dashed)
         {
-            graphics.DrawRectangle(new Pen(color, 2), position.X * Figure.BrickSize + 2, position.Y * Figure.BrickSize + 2, Figure.BrickSize - 4, Figure.BrickSize - 4);
+            if (dashed)
+            {
+                graphics.DrawRectangle(new Pen(color, 2) { DashPattern = new float[] { 1.5f, 2.5f, 2.5f, 2.5f, 3, 2.5f, 2.5f, 2.5f, 3, 2.5f, 2.5f, 2.5f, 3, 2.5f, 2.5f, 2.5f, 0.5f } }, position.X * Figure.BrickSize + 2, position.Y * Figure.BrickSize + 2, Figure.BrickSize - 4, Figure.BrickSize - 4);
+                graphics.FillRectangle(new SolidBrush(color), position.X * Figure.BrickSize + 1, position.Y * Figure.BrickSize + Figure.BrickSize - 2, 1, 1);
+            }
+            else
+            {
+                graphics.DrawRectangle(new Pen(color, 2), position.X * Figure.BrickSize + 2, position.Y * Figure.BrickSize + 2, Figure.BrickSize - 4, Figure.BrickSize - 4);
+            }
         }
 
         public static void ClearCell(Graphics graphics, Color color, Point position)

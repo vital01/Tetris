@@ -22,9 +22,9 @@ namespace Tetris
             Graphics = Graphics.FromImage(Bitmap);
         }
 
-        public void PaintCell(Color color, Point position)
+        public void PaintCell(Color color, Point position, bool dashed)
         {
-            Drawing.PaintCell(Graphics, color, position);
+            Drawing.PaintCell(Graphics, color, position, dashed);
         }
 
         public void ClearCell(Color color, Point position)

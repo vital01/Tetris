@@ -387,7 +387,7 @@ namespace Tetris
                             if (Game.Field.Matrix[i, j] != 0)
                             {
                                 Game.Field.ClearCell(Color.Black, new Point(j, i));
-                                Game.Field.PaintCell(Colors[Game.Field.Matrix[i, j] - 1], new Point(j, i + offset));
+                                Game.Field.PaintCell(Colors[Game.Field.Matrix[i, j] - 1], new Point(j, i + offset), false);
                                 Game.Field.Matrix[i + offset, j] = Game.Field.Matrix[i, j];
                                 Game.Field.Matrix[i, j] = 0;
                             }
@@ -452,10 +452,10 @@ namespace Tetris
                 if (ProjectionEnabled && drawProjection)
                 {
                     FindProjectionPosition();
-                    Game.Field.PaintCell(Color.FromArgb(96, Colors[Id]), new Point(ProjectionPosition.X + Schemas[Id][SchemaId][i].X, ProjectionPosition.Y + Schemas[Id][SchemaId][i].Y));
+                    Game.Field.PaintCell(Color.FromArgb(64, Color.White), new Point(ProjectionPosition.X + Schemas[Id][SchemaId][i].X, ProjectionPosition.Y + Schemas[Id][SchemaId][i].Y), true);
                     OldProjectionPosition = ProjectionPosition;
                 }
-                Game.Field.PaintCell(Colors[Id], new Point(Position.X + Schemas[Id][SchemaId][i].X, Position.Y + Schemas[Id][SchemaId][i].Y));                
+                Game.Field.PaintCell(Colors[Id], new Point(Position.X + Schemas[Id][SchemaId][i].X, Position.Y + Schemas[Id][SchemaId][i].Y), false);                
             }
             OldSchemaId = SchemaId;
             OldPosition = Position;

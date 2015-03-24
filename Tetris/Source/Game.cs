@@ -100,7 +100,7 @@ namespace Tetris
                 Point position = (NextId == 1 ? new Point(1, -1) : (NextId == 2 ? new Point(0, 0) : new Point(1, 0)));
                 for (int i = 0; i < 4; i++)
                 {
-                    Drawing.PaintCell(graphics, Figure.Colors[NextId], new Point(position.X + Figure.Schemas[NextId][0][i].X, position.Y + Figure.Schemas[NextId][0][i].Y));
+                    Drawing.PaintCell(graphics, Figure.Colors[NextId], new Point(position.X + Figure.Schemas[NextId][0][i].X, position.Y + Figure.Schemas[NextId][0][i].Y), false);
                 }
                 Drawing.RefreshImage(MainForm.Instance.nextPicture1, bitmap);
             }
